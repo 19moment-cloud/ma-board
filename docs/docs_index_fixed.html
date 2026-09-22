@@ -1,0 +1,316 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MA看板 私有版</title>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+<style>
+*{box-sizing:border-box} body{font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial;background:#0a0e14;color:#e6e6e6;padding:14px;margin:0}
+#lock{position:fixed;inset:0;background:#0a0e14;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999}
+#lock input{padding:14px 18px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:18px;text-align:center;margin:14px;width:240px}
+#lock button{padding:12px 28px;border-radius:12px;border:none;background:#f59e0b;color:#000;font-weight:800;font-size:16px;cursor:pointer}
+.header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0} h1{font-size:18px;margin:0} .search{flex:1;min-width:180px;max-width:300px;position:relative} 
+.search input{width:100%;padding:10px 14px 10px 36px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:12px;outline:none}
+.sub{color:#94a3b8;font-size:11px;margin-bottom:12px}
+.addRow{display:flex;gap:8px;align-items:center;margin:0 0 12px;flex-wrap:wrap;position:relative} .addRow input{flex:1;min-width:200px;max-width:400px;padding:10px 14px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:12px;outline:none} .addbtn{padding:10px 16px;border-radius:12px;border:none;background:#f59e0b;color:#000;font-weight:800;cursor:pointer;white-space:nowrap}
+#yahooSuggest{position:absolute;top:42px;left:0;width:420px;max-width:90vw;background:#1e293b;border:1px solid #334155;border-radius:12px;z-index:200;display:none;max-height:360px;overflow-y:auto}
+#yahooSuggest .s-item{padding:10px 14px;cursor:pointer;border-bottom:1px solid #2a3441;font-size:12px;display:flex;justify-content:space-between;gap:8px} #yahooSuggest .s-item:hover{background:#334155} #yahooSuggest .s-item b{color:#fde68a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px;align-items:start;min-height:20px}
+.section{margin-top:18px} .section-title{font-size:13px;color:#94a3b8;margin:0 0 8px;padding-left:4px;border-left:3px solid #f59e0b}
+.pinned-section{margin-bottom:14px} .pinned-title{font-size:13px;color:#fde68a;margin:0 0 8px;display:none} .pinned-title.show{display:block}
+.card{border-radius:14px;padding:11px 13px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;min-height:115px;overflow:hidden;position:relative;cursor:grab} .card.hide{display:none} .sortable-ghost{opacity:0.3} .sortable-chosen{border:2px solid #f59e0b !important}
+.橙{background:linear-gradient(135deg,#ff8a00,#ffb347);color:#000} .綠{background:linear-gradient(135deg,#00c853,#69f0ae);color:#000} .灰{background:#1e293b;color:#cbd5e1;border:1px solid #2a3441} .藍{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff} .紅{background:linear-gradient(135deg,#d50000,#ff5252);color:#fff} .白{background:#fff;color:#000;border:2px dashed #94a3b8}
+.star{font-size:20px;cursor:pointer;user-select:none;line-height:1;padding:2px 4px;border-radius:6px;flex-shrink:0} .star.pinned{color:#f59e0b} 
+.left{flex:1;min-width:0} .top{font-size:12px;display:flex;align-items:center;gap:6px;flex-wrap:wrap} .top b{max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block} .mid{margin-top:6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.price{color:#facc15;font-weight:900;font-size:15px;background:rgba(0,0,0,0.32);padding:2px 8px;border-radius:6px} .白 .price{background:#000;color:#fff}
+.pct{font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,0.45);color:#fff} .pct-up{color:#4ade80} .pct-down{color:#f87171}
+.dots{display:inline-flex;align-items:center;background:#000;padding:3px 8px;border-radius:12px;gap:3px;cursor:pointer;user-select:none;border:1px solid #111} .dots.white{background:#fff !important;border-color:#ddd} .dots .arrow{font-size:10px;color:#fff} .dots.white .arrow{color:#000} .dot{width:9px;height:9px;border-radius:50%;display:inline-block} .dot.橙{background:#ff8a00} .dot.綠{background:#00c853} .dot.藍{background:#2962ff} .dot.紅{background:#d50000} .dot.灰{background:#94a3b8} .dot.白{background:#fff;border:1px solid #000}
+.rsi-inline{font-size:11px;font-weight:800;padding:3px 7px;border-radius:6px;background:rgba(0,0,0,0.35);margin-left:2px} .rsi-inline.rsi-green{color:#4ade80;border:1px solid #22c55e} .rsi-inline.rsi-red{color:#f87171;border:1px solid #ef4444}
+.ma-box{margin-top:6px;background:#000;border-radius:8px;padding:7px 9px;border:1px solid #111;cursor:pointer} .ma-box.white{background:#fff;border-color:#ddd} .ma-row{font-size:11px;line-height:1.7;display:flex;flex-wrap:wrap;gap:6px} .ma-w{color:#fff;font-weight:600} .ma-box.white .ma-w{color:#000 !important} .ma-item{white-space:nowrap} .ma-green{color:#4ade80;font-weight:900} .ma-red{color:#f87171;font-weight:900} .ma-same{color:#fff} .ma-box.white .ma-same{color:#000}
+.ver{background:#78350f;color:#fde68a;border:1px solid #92400e;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:800}
+</style></head><body>
+
+<div id="lock">
+<h2>🔒 私有看板</h2>
+<div style="color:#94a3b8;font-size:13px">請輸入密碼</div>
+<input id="pw" type="password" placeholder="密碼 88666666" autocomplete="off"/>
+<button id="enterBtn" type="button">進入</button>
+<div id="lockMsg" style="color:#f87171;font-size:13px;margin-top:12px;min-height:20px;font-weight:700"></div>
+<div style="color:#475569;font-size:11px;margin-top:6px">如點沒反應，請按 F12 看 Console</div>
+</div>
+
+<div class="header">
+<h1><a href="https://hk.finance.yahoo.com/markets" target="_blank" style="text-decoration:none" title="開 Yahoo HK">🚀</a> MA(20/60/240) 私有版 <span class="ver">V20.2 修復版</span></h1>
+<div class="search"><span class="icon">🔍</span><input id="search" type="text" placeholder="搜索代號/名稱模糊" /></div>
+</div>
+
+<div class="addRow"><input id="addInput" type="text" placeholder="加股：輸入 TS 自動搜 Yahoo HK" autocomplete="off"/><div id="yahooSuggest"></div><button class="addbtn" id="addBtn">+ 加股</button><button class="addbtn" id="clearBtn" style="background:#1e293b;color:#fff;border:1px solid #334155">清空自加</button></div>
+
+<div class="sub">更新: <span id="updateTime">讀取中...</span> | 共<span id="count">--</span>隻 自加<span id="customCount">0</span>隻 置頂<span id="pinCount">0</span>隻 |</div>
+
+<div class="pinned-section"><div id="pinnedTitle" class="pinned-title">⭐ 置頂觀察 (可拖動排序)</div><div id="pinnedGrid" class="grid"></div></div>
+
+<div class="grid" id="grid"></div>
+
+<div class="section"><div class="section-title">.HK</div><div class="grid" id="grid-hk"></div></div>
+<div class="section"><div class="section-title">指數</div><div class="grid" id="grid-index"></div></div>
+<div class="section"><div class="section-title">等候 (自加待建 custom.json)</div><div class="grid" id="grid-waiting"></div></div>
+
+<script>
+// ========== 鎖屏 - 最簡最可靠版本 ==========
+const REAL_PW = "88666666";
+console.log("🔒 期望密碼:", REAL_PW);
+
+function unlock() {
+  const input = document.getElementById('pw');
+  const msg = document.getElementById('lockMsg');
+  const v = (input.value || '').trim();
+  console.log("點擊進入，輸入:", v);
+  if (!v) {
+    msg.innerText = "請輸入密碼";
+    alert("請輸入密碼");
+    return;
+  }
+  if (v === REAL_PW) {
+    document.getElementById('lock').style.display = 'none';
+    msg.innerText = "";
+    try { sessionStorage.setItem('ma_pw','ok'); } catch(e){}
+    console.log("✅ 解鎖成功");
+  } else {
+    msg.innerText = "❌ 密碼錯誤，正確是 88666666，你輸入的是: " + v;
+    alert("❌ 密碼錯誤，你輸入的是: " + v + "\n正確密碼是: 88666666");
+    input.value = "";
+    input.focus();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const btn = document.getElementById('enterBtn');
+  const pw = document.getElementById('pw');
+  console.log("DOM 加載完成，綁定按鈕");
+  if (btn) {
+    btn.onclick = unlock;
+    btn.addEventListener('click', unlock);
+    console.log("按鈕綁定完成");
+  }
+  if (pw) {
+    pw.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') { e.preventDefault(); unlock(); }
+    });
+    pw.focus();
+  }
+  try {
+    if (sessionStorage.getItem('ma_pw') === 'ok') {
+      document.getElementById('lock').style.display = 'none';
+      console.log("已自動解鎖");
+    }
+  } catch(e){}
+});
+
+// ========== 數據加載和渲染 ==========
+let focusDots = JSON.parse(localStorage.getItem('focusDotsV20')||'{}');
+let focusMa = JSON.parse(localStorage.getItem('focusMaV20')||'{}');
+
+function maSpan(label, val, curr){
+  if (!val) return `<span class='ma-item'><span class='ma-w'>${label}(--)</span></span>`;
+  let cls = val > curr ? 'ma-red' : val < curr ? 'ma-green' : 'ma-same';
+  return `<span class='ma-item'><span class='ma-w'>${label}</span><span class='${cls}'>(${Math.round(val)})</span></span>`;
+}
+
+function createCard(r){
+  let isWhite = r.today==="白";
+  let pctCls = r.pct>=0 ? 'pct-up' : 'pct-down';
+  let sign = r.pct>=0 ? '+' : '';
+  let currHtml = r.curr>0 ? `<span class='price'>$${r.curr}</span>` : `<span class='price'>--</span>`;
+  let pctHtml = r.curr>0 && !isWhite ? `<span class='pct ${pctCls}'>${sign}${r.pct.toFixed(2)}%</span>` : (isWhite ? `<span class='pct'>限流</span>` : '');
+  let dots = `<span class='dots ${focusDots[r.code]?'white':''}' data-ticker='${r.code}'><span class='dot ${r.pre}'></span><span class='arrow'>→</span><span class='dot ${r.yesterday}'></span><span class='arrow'>→</span><span class='dot ${r.today}'></span></span>`;
+  let rsiHtml = "";
+  if (r.rsi14!=null){
+    let cls = r.rsi14>=70 ? 'rsi-green' : r.rsi14<=30 ? 'rsi-red' : '';
+    rsiHtml = `<span class='rsi-inline ${cls}'>RSI14 (${r.rsi14.toFixed(0)})</span>`;
+  }
+  let display = r.display || `(${r.code})${r.name}`;
+  if (display.length>35) display = display.slice(0,34)+"…";
+  let dRow, hRow;
+  if (isWhite){
+    dRow = `<div class='ma-row'><span class='ma-w'>限流</span></div>`;
+    hRow = `<div class='ma-row'><span class='ma-w'>時k含盤前後已確認</span></div>`;
+  } else {
+    dRow = `<div class='ma-row'><span class='ma-w'>日k：</span>${maSpan('MA20',r.d20,r.curr)} ${maSpan('MA60',r.d60,r.curr)} ${maSpan('MA240',r.d240,r.curr)}</div>`;
+    hRow = `<div class='ma-row'><span class='ma-w'>時k：</span>${maSpan('MA20',r.h20,r.curr)} ${maSpan('MA60',r.h60,r.curr)} ${maSpan('MA240',r.h240,r.curr)}</div>`;
+  }
+  return `<div class="card ${r.today}" data-code="${r.code.toLowerCase()}" data-name="${display.toLowerCase()} ${r.code.toLowerCase()}" data-ticker="${r.code}">
+    <div class="left">
+      <div class="top"><b>${display}</b> ${dots}</div>
+      <div class="mid">${currHtml} ${pctHtml} ${rsiHtml}</div>
+      <div class="ma-box ${focusMa[r.code]?'white':''}" data-ticker='${r.code}'><div class="ma-inner">${dRow}${hRow}</div></div>
+    </div>
+    <div class="star" data-pin='${r.code}'>☆</div>
+  </div>`;
+}
+
+let allResults = [];
+function renderAll(){
+  fetch('data.json?v='+Date.now())
+    .then(r=>r.json())
+    .then(data=>{
+      document.getElementById('updateTime').innerText = data.update || '未知';
+      allResults = data.results || [];
+      let grid = document.getElementById('grid');
+      grid.innerHTML = '';
+      allResults.forEach(r=>{
+        grid.insertAdjacentHTML('beforeend', createCard(r));
+      });
+      document.getElementById('count').innerText = allResults.length + (JSON.parse(localStorage.getItem('customStocksV20')||'[]').length);
+      restoreLayout();
+      initSortable();
+      renderPins();
+      applyFocus();
+      loadCustomWaiting();
+    })
+    .catch(err=>{
+      console.error(err);
+      document.getElementById('updateTime').innerText = '讀取失敗 '+err;
+    });
+}
+
+function saveLayout(){
+  let order={};
+  ['grid','pinnedGrid','grid-hk','grid-index','grid-waiting'].forEach(id=>{
+    let el=document.getElementById(id);
+    if(!el) return;
+    order[id]=Array.from(el.children).map(c=>c.getAttribute('data-ticker')).filter(Boolean);
+  });
+  localStorage.setItem('layoutOrderV20', JSON.stringify(order));
+}
+function initSortable(){
+  ['grid','pinnedGrid','grid-hk','grid-index','grid-waiting'].forEach(id=>{
+    let el=document.getElementById(id);
+    if(!el) return;
+    if(el._sortable) el._sortable.destroy();
+    el._sortable = new Sortable(el, { group: 'shared', animation:150, ghostClass:'sortable-ghost', chosenClass:'sortable-chosen', onEnd: ()=>{ saveLayout(); renderPins(); }});
+  });
+}
+function restoreLayout(){
+  try{
+    let order=JSON.parse(localStorage.getItem('layoutOrderV20')||'{}');
+    Object.keys(order).forEach(gridId=>{
+      let grid=document.getElementById(gridId);
+      if(!grid) return;
+      let map={};
+      document.querySelectorAll('.card').forEach(c=>{ map[c.getAttribute('data-ticker').toUpperCase()]=c; });
+      order[gridId].forEach(t=>{
+        let card=map[t.toUpperCase()];
+        if(card) grid.appendChild(card);
+      });
+    });
+  }catch(e){}
+}
+let pinnedStocks = JSON.parse(localStorage.getItem('pinnedV20')||'[]');
+function renderPins(){
+  let count=document.getElementById('pinnedGrid').children.length;
+  document.getElementById('pinnedTitle').classList.toggle('show', count>0);
+  document.getElementById('pinCount').innerText=count;
+  document.querySelectorAll('.card').forEach(card=>{
+    let t=card.getAttribute('data-ticker').toUpperCase();
+    let s=card.querySelector('.star');
+    if(!s) return;
+    s.innerText=pinnedStocks.includes(t)?'★':'☆';
+    s.classList.toggle('pinned', pinnedStocks.includes(t));
+  });
+}
+function togglePin(ticker){
+  ticker=ticker.toUpperCase();
+  if(pinnedStocks.includes(ticker)) pinnedStocks=pinnedStocks.filter(t=>t!==ticker); else pinnedStocks.push(ticker);
+  localStorage.setItem('pinnedV20', JSON.stringify(pinnedStocks));
+  let card=document.querySelector(`.card[data-ticker="${ticker}"]`);
+  if(card){
+    if(pinnedStocks.includes(ticker)) document.getElementById('pinnedGrid').appendChild(card);
+    else document.getElementById('grid').appendChild(card);
+  }
+  renderPins(); saveLayout(); applyFocus();
+}
+function applyFocus(){
+  document.querySelectorAll('.dots[data-ticker]').forEach(el=>{ if(focusDots[el.getAttribute('data-ticker')]) el.classList.add('white'); });
+  document.querySelectorAll('.ma-box[data-ticker]').forEach(el=>{ if(focusMa[el.getAttribute('data-ticker')]) el.classList.add('white'); });
+}
+
+document.addEventListener('click', function(e){
+  let dots = e.target.closest('.dots');
+  if(dots){ dots.classList.toggle('white'); let t=dots.getAttribute('data-ticker'); if(t){ if(dots.classList.contains('white')) focusDots[t]=1; else delete focusDots[t]; localStorage.setItem('focusDotsV20', JSON.stringify(focusDots)); } return; }
+  let mbox = e.target.closest('.ma-box');
+  if(mbox){ mbox.classList.toggle('white'); let t=mbox.getAttribute('data-ticker'); if(t){ if(mbox.classList.contains('white')) focusMa[t]=1; else delete focusMa[t]; localStorage.setItem('focusMaV20', JSON.stringify(focusMa)); } return; }
+  let star = e.target.closest('.star');
+  if(star){ let ticker=star.getAttribute('data-pin'); if(ticker) togglePin(ticker); return; }
+});
+
+document.getElementById('search').addEventListener('input', e=>{
+  let q=e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.grid .card').forEach(card=>{
+    let code=card.getAttribute('data-code')||'';
+    let name=card.getAttribute('data-name')||'';
+    if(!q) card.classList.remove('hide');
+    else card.classList.toggle('hide', !(code.includes(q)||name.includes(q)));
+  });
+});
+
+let customStocks = JSON.parse(localStorage.getItem('customStocksV20')||'[]');
+function saveCustom(){ localStorage.setItem('customStocksV20', JSON.stringify(customStocks)); document.getElementById('customCount').innerText=customStocks.length; }
+function loadCustomWaiting(){
+  saveCustom();
+  let waiting = document.getElementById('grid-waiting');
+  // 清空後重新加（避免重複）
+  let existing = new Set(Array.from(waiting.children).map(c=>c.getAttribute('data-ticker')));
+  customStocks.forEach(s=>{
+    if(existing.has(s.code)) return;
+    if(allResults.find(r=>r.code===s.code)) return; // 已有數據的不放等候
+    let disp = `(${s.code})${s.name}`;
+    if(disp.length>35) disp=disp.slice(0,34)+'…';
+    waiting.insertAdjacentHTML('beforeend', `<div class="card 白 custom" data-code="${s.code.toLowerCase()}" data-name="${s.name.toLowerCase()}" data-ticker="${s.code}"><div class="left"><div class="top"><b>${disp}</b></div><div class="mid"><span class="price">等候區</span></div></div><div class="star" data-pin="${s.code}">☆</div></div>`);
+  });
+}
+document.getElementById('addBtn').addEventListener('click', ()=>addStock());
+document.getElementById('clearBtn').addEventListener('click', ()=>{
+  if(!confirm('清空所有自加？')) return;
+  customStocks=[]; saveCustom(); document.getElementById('grid-waiting').innerHTML=''; saveLayout();
+});
+function normalizeTicker(s){ s=s.trim().toUpperCase(); if(!s) return null; if(/^\d{3,5}$/.test(s)) return s+'.HK'; return s; }
+function addStock(input){
+  let raw=(input||document.getElementById('addInput').value||'').trim(); if(!raw) return;
+  let tok=raw.split(/[\s,，]+/)[0]; let ticker=normalizeTicker(tok); let name=raw.replace(tok,'').trim()||tok;
+  document.getElementById('addInput').value=''; document.getElementById('yahooSuggest').style.display='none';
+  if(customStocks.find(s=>s.code===ticker)){ alert(ticker+' 已加過'); return; }
+  customStocks.push({code:ticker, name:name}); saveCustom();
+  let disp = `(${ticker})${name}`; if(disp.length>35) disp=disp.slice(0,34)+'…';
+  document.getElementById('grid-waiting').insertAdjacentHTML('beforeend', `<div class="card 白 custom" data-code="${ticker.toLowerCase()}" data-name="${name.toLowerCase()}" data-ticker="${ticker}"><div class="left"><div class="top"><b>${disp}</b></div><div class="mid"><span class="price">已加入等候區</span></div></div><div class="star" data-pin="${ticker}">☆</div></div>`);
+  saveLayout();
+}
+document.getElementById('addInput').addEventListener('keydown', e=>{
+  if(e.key==='Enter'){ let box=document.getElementById('yahooSuggest'); if(box.style.display!=='none' && box.firstChild) box.firstChild.click(); else addStock(); }
+});
+let yTimer=null;
+document.getElementById('addInput').addEventListener('input', e=>{
+  let q=e.target.value.trim(); let box=document.getElementById('yahooSuggest');
+  if(!q){ box.style.display='none'; return; }
+  clearTimeout(yTimer);
+  yTimer=setTimeout(async ()=>{
+    try{
+      let yUrl = `https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(q)}&quotesCount=12&newsCount=0&lang=zh-Hant&region=HK`;
+      let proxy = `https://api.allorigins.win/raw?url=${encodeURIComponent(yUrl)}`;
+      let r = await fetch(proxy);
+      let d = await r.json();
+      let quotes = d.quotes||[];
+      if(!quotes.length) throw 'no quotes';
+      box.innerHTML='';
+      quotes.forEach(it=>{
+        let div=document.createElement('div'); div.className='s-item';
+        div.innerHTML=`<span><b>${it.symbol}</b> ${it.shortname||it.longname||''}</span><span>${it.exchange||''}</span>`;
+        div.onclick=()=>{ document.getElementById('addInput').value=it.symbol+' '+(it.shortname||''); box.style.display='none'; addStock(it.symbol+' '+(it.shortname||'')); };
+        box.appendChild(div);
+      });
+      box.style.display='block';
+    }catch(err){ box.style.display='none'; }
+  },300);
+});
+document.addEventListener('click', e=>{ if(!e.target.closest('.addRow')) document.getElementById('yahooSuggest').style.display='none'; });
+
+renderAll();
+</script>
+</body></html>
