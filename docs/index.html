@@ -31,16 +31,16 @@
 </div>
 <div class="addRow"><input id="addInput" type="text" placeholder="加股：輸入 PLTR / 0700 / 0700.HK / 9988.HK 回車" /><button class="addbtn" onclick="addStock()">+ 加股</button><button class="addbtn" style="background:#1e293b;color:#fff;border:1px solid #334155" onclick="clearCustom()">清空自加</button></div>
 
-<div class="sub">更新: 2026-09-22 18:59:32 香港時間 | 共<span id="count">35</span>隻 自加<span id="customCount">0</span>隻 置頂<span id="pinCount">0</span>隻 |</div>
+<div class="sub">更新: 2026-09-22 19:12:08 香港時間 | 共<span id="count">35</span>隻 自加<span id="customCount">0</span>隻 置頂<span id="pinCount">0</span>隻 |</div>
 
 <div class="pinned-section"><div id="pinnedTitle" class="pinned-title">⭐ 置頂觀察</div><div id="pinnedGrid" class="grid"></div></div>
 
 <div style="margin-bottom:8px">
 <span class="pill">🟠橙 主升 23隻</span>
-<span class="pill">🟢綠 次強 1隻</span>
-<span class="pill">🔵藍 弱 2隻</span>
-<span class="pill">🔴紅 空頭 2隻</span>
-<span class="pill">⚪灰 震盪 7隻</span>
+<span class="pill">🟢綠 次強 0隻</span>
+<span class="pill">🔵藍 弱 3隻</span>
+<span class="pill">🔴紅 空頭 3隻</span>
+<span class="pill">⚪灰 震盪 6隻</span>
 <span class="pill" style="background:#fff;color:#000">⬜白 限流 0隻</span>
 </div>
 
@@ -48,7 +48,7 @@
 <div class="card 橙" data-code="smci" data-name="超微電腦 smci" data-ticker="SMCI">
   <div class="left">
     <div class="top"><b>SMCI</b> 超微電腦 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$41.15</span> <span class='pct pct-up'>+5.27%</span></div>
+    <div class="mid"><span class='price'>$41.0</span> <span class='pct pct-up'>+4.89%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(38)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(33)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(34)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(41)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(40)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(38)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('SMCI')" title="置頂">☆</div>
@@ -56,23 +56,23 @@
 <div class="card 橙" data-code="nbis" data-name="nebius group nbis" data-ticker="NBIS">
   <div class="left">
     <div class="top"><b>NBIS</b> Nebius Group <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$233.76</span> <span class='pct pct-up'>+4.57%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(218)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(215)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(153)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(231)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(223)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(220)</span></span></div></div>
+    <div class="mid"><span class='price'>$232.9</span> <span class='pct pct-up'>+4.19%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(218)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(215)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(153)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(231)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(224)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(220)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('NBIS')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="mu" data-name="美光科技 mu" data-ticker="MU">
   <div class="left">
     <div class="top"><b>MU</b> 美光科技 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$1039.47</span> <span class='pct pct-up'>+2.33%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(963)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(945)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(573)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(1040)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(997)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(974)</span></span></div></div>
+    <div class="mid"><span class='price'>$1036.62</span> <span class='pct pct-up'>+2.05%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(963)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(945)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(573)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(1040)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(999)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(974)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('MU')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="muu" data-name="美光2x muu" data-ticker="MUU">
   <div class="left">
     <div class="top"><b>MUU</b> 美光2X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$35.06</span> <span class='pct pct-up'>+3.97%</span></div>
+    <div class="mid"><span class='price'>$34.86</span> <span class='pct pct-up'>+3.38%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(31)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(32)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(18)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(35)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(33)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(31)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('MUU')" title="置頂">☆</div>
@@ -80,47 +80,47 @@
 <div class="card 橙" data-code="sndk" data-name="sandisk sndk" data-ticker="SNDK">
   <div class="left">
     <div class="top"><b>SNDK</b> SanDisk <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$1771.0</span> <span class='pct pct-down'>-1.16%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(1600)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(1569)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(929)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(1781)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(1682)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(1638)</span></span></div></div>
+    <div class="mid"><span class='price'>$1763.0</span> <span class='pct pct-down'>-1.61%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(1600)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(1569)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(929)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(1778)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(1686)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(1639)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('SNDK')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="soxx" data-name="半導體etf soxx" data-ticker="SOXX">
   <div class="left">
     <div class="top"><b>SOXX</b> 半導體ETF <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$558.5</span> <span class='pct pct-up'>+4.77%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(516)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(535)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(417)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(554)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(531)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(516)</span></span></div></div>
+    <div class="mid"><span class='price'>$556.27</span> <span class='pct pct-up'>+4.35%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(516)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(535)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(417)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(555)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(532)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(517)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('SOXX')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="soxl" data-name="半導體3x soxl" data-ticker="SOXL">
   <div class="left">
     <div class="top"><b>SOXL</b> 半導體3X <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$141.1</span> <span class='pct pct-up'>+14.09%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(115)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(141)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(101)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(138)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(123)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(115)</span></span></div></div>
+    <div class="mid"><span class='price'>$139.81</span> <span class='pct pct-up'>+13.05%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(115)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(141)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(101)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(139)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(123)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(115)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('SOXL')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="crcl" data-name="circle crcl" data-ticker="CRCL">
   <div class="left">
     <div class="top"><b>CRCL</b> Circle <span class='dots'><span class='dot 綠'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$94.4</span> <span class='pct pct-up'>+2.85%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(92)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(75)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(90)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(95)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(89)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(92)</span></span></div></div>
+    <div class="mid"><span class='price'>$95.5</span> <span class='pct pct-up'>+4.05%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(92)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(75)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(90)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(95)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(89)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(92)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('CRCL')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="crcg" data-name="circle2x crcg" data-ticker="CRCG">
   <div class="left">
     <div class="top"><b>CRCG</b> Circle2X <span class='dots'><span class='dot 綠'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$15.84</span> <span class='pct pct-up'>+6.22%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(16)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(29)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(16)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(14)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(16)</span></span></div></div>
+    <div class="mid"><span class='price'>$16.08</span> <span class='pct pct-up'>+7.85%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(16)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(29)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(16)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(14)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(16)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('CRCG')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="upro" data-name="標普3x upro" data-ticker="UPRO">
   <div class="left">
     <div class="top"><b>UPRO</b> 標普3X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$154.59</span> <span class='pct pct-up'>+5.03%</span></div>
+    <div class="mid"><span class='price'>$154.17</span> <span class='pct pct-up'>+4.74%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(149)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(146)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(126)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(153)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(148)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(148)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('UPRO')" title="置頂">☆</div>
@@ -128,7 +128,7 @@
 <div class="card 橙" data-code="tqqq" data-name="納指3x tqqq" data-ticker="TQQQ">
   <div class="left">
     <div class="top"><b>TQQQ</b> 納指3X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$79.25</span> <span class='pct pct-up'>+9.10%</span></div>
+    <div class="mid"><span class='price'>$78.96</span> <span class='pct pct-up'>+8.70%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(71)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(71)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(61)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(78)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(73)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(71)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('TQQQ')" title="置頂">☆</div>
@@ -136,15 +136,15 @@
 <div class="card 橙" data-code="tsla" data-name="特斯拉 tsla" data-ticker="TSLA">
   <div class="left">
     <div class="top"><b>TSLA</b> 特斯拉 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$378.09</span> <span class='pct pct-up'>+3.79%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(360)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(359)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(403)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(374)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(368)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(363)</span></span></div></div>
+    <div class="mid"><span class='price'>$378.45</span> <span class='pct pct-up'>+3.89%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(360)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(359)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(403)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(374)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(368)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(364)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('TSLA')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="spy" data-name="標普500 spy" data-ticker="SPY">
   <div class="left">
     <div class="top"><b>SPY</b> 標普500 <span class='dots'><span class='dot 綠'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$774.34</span> <span class='pct pct-up'>+1.66%</span></div>
+    <div class="mid"><span class='price'>$773.64</span> <span class='pct pct-up'>+1.57%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(763)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(756)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(705)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(771)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(764)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(764)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('SPY')" title="置頂">☆</div>
@@ -152,7 +152,7 @@
 <div class="card 橙" data-code="qqq" data-name="納指qqq qqq" data-ticker="QQQ">
   <div class="left">
     <div class="top"><b>QQQ</b> 納指QQQ <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$742.46</span> <span class='pct pct-up'>+3.02%</span></div>
+    <div class="mid"><span class='price'>$741.47</span> <span class='pct pct-up'>+2.88%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(714)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(711)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(653)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(737)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(723)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(715)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('QQQ')" title="置頂">☆</div>
@@ -160,7 +160,7 @@
 <div class="card 橙" data-code="baba" data-name="阿里 baba" data-ticker="BABA">
   <div class="left">
     <div class="top"><b>BABA</b> 阿里 <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$119.16</span> <span class='pct pct-up'>+5.23%</span></div>
+    <div class="mid"><span class='price'>$119.62</span> <span class='pct pct-up'>+5.63%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(113)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(115)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(138)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(116)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(112)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(111)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('BABA')" title="置頂">☆</div>
@@ -168,7 +168,7 @@
 <div class="card 橙" data-code="nvda" data-name="輝達 nvda" data-ticker="NVDA">
   <div class="left">
     <div class="top"><b>NVDA</b> 輝達 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$227.61</span> <span class='pct pct-up'>+2.40%</span></div>
+    <div class="mid"><span class='price'>$227.1</span> <span class='pct pct-up'>+2.17%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(219)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(212)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(196)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(226)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(221)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(221)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('NVDA')" title="置頂">☆</div>
@@ -176,15 +176,15 @@
 <div class="card 橙" data-code="amd" data-name="超微 amd" data-ticker="AMD">
   <div class="left">
     <div class="top"><b>AMD</b> 超微 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> <span class='rsi-inline rsi-green'>RSI14(73)</span></div>
-    <div class="mid"><span class='price'>$612.49</span> <span class='pct pct-up'>+9.41%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(498)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(504)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(336)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(602)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(561)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(507)</span></span></div></div>
+    <div class="mid"><span class='price'>$609.25</span> <span class='pct pct-up'>+8.83%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(498)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(504)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(336)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(604)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(562)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(508)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('AMD')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="intc" data-name="英特爾 intc" data-ticker="INTC">
   <div class="left">
     <div class="top"><b>INTC</b> 英特爾 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> <span class='rsi-inline rsi-green'>RSI14(71)</span></div>
-    <div class="mid"><span class='price'>$122.1</span> <span class='pct pct-up'>+12.43%</span></div>
+    <div class="mid"><span class='price'>$121.38</span> <span class='pct pct-up'>+11.77%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(97)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(101)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(71)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(120)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(112)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(101)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('INTC')" title="置頂">☆</div>
@@ -192,7 +192,7 @@
 <div class="card 橙" data-code="aapl" data-name="蘋果 aapl" data-ticker="AAPL">
   <div class="left">
     <div class="top"><b>AAPL</b> 蘋果 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$339.44</span> <span class='pct pct-up'>+0.98%</span></div>
+    <div class="mid"><span class='price'>$339.33</span> <span class='pct pct-up'>+0.95%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(324)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(317)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(283)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(338)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(336)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(328)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('AAPL')" title="置頂">☆</div>
@@ -200,7 +200,7 @@
 <div class="card 橙" data-code="googl" data-name="谷歌-a googl" data-ticker="GOOGL">
   <div class="left">
     <div class="top"><b>GOOGL</b> 谷歌-A <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$357.44</span> <span class='pct pct-up'>+2.26%</span></div>
+    <div class="mid"><span class='price'>$356.87</span> <span class='pct pct-up'>+2.10%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(342)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(347)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(327)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(355)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(351)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(342)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('GOOGL')" title="置頂">☆</div>
@@ -208,7 +208,7 @@
 <div class="card 橙" data-code="goog" data-name="谷歌-c goog" data-ticker="GOOG">
   <div class="left">
     <div class="top"><b>GOOG</b> 谷歌-C <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$353.52</span> <span class='pct pct-up'>+2.65%</span></div>
+    <div class="mid"><span class='price'>$352.76</span> <span class='pct pct-up'>+2.42%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(339)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(345)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(326)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(351)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(347)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(338)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('GOOG')" title="置頂">☆</div>
@@ -216,26 +216,18 @@
 <div class="card 橙" data-code="msft" data-name="微軟 msft" data-ticker="MSFT">
   <div class="left">
     <div class="top"><b>MSFT</b> 微軟 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$504.76</span> <span class='pct pct-up'>+2.22%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(498)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(452)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(442)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(498)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(496)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(498)</span></span></div></div>
+    <div class="mid"><span class='price'>$506.07</span> <span class='pct pct-up'>+2.49%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(498)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(452)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(442)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(499)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(496)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(498)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('MSFT')" title="置頂">☆</div>
 </div>
 <div class="card 橙" data-code="amzn" data-name="亞馬遜 amzn" data-ticker="AMZN">
   <div class="left">
     <div class="top"><b>AMZN</b> 亞馬遜 <span class='dots'><span class='dot 綠'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
-    <div class="mid"><span class='price'>$259.91</span> <span class='pct pct-up'>+2.44%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(256)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(254)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(239)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(258)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(253)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(254)</span></span></div></div>
+    <div class="mid"><span class='price'>$259.71</span> <span class='pct pct-up'>+2.37%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(256)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(254)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(239)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(258)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(254)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(254)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('AMZN')" title="置頂">☆</div>
-</div>
-<div class="card 綠" data-code="futu" data-name="富途 futu" data-ticker="FUTU">
-  <div class="left">
-    <div class="top"><b>FUTU</b> 富途 <span class='dots'><span class='dot 綠'></span><span class='arrow'>→</span><span class='dot 綠'></span></span> </div>
-    <div class="mid"><span class='price'>$114.52</span> <span class='pct pct-up'>+2.24%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(117)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(108)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(140)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(114)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(112)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(115)</span></span></div></div>
-  </div>
-  <div class="star" onclick="togglePin('FUTU')" title="置頂">☆</div>
 </div>
 <div class="card 藍" data-code="dxyz" data-name="destiny tech100 dxyz" data-ticker="DXYZ">
   <div class="left">
@@ -248,15 +240,31 @@
 <div class="card 藍" data-code="bez" data-name="2x short be bez" data-ticker="BEZ">
   <div class="left">
     <div class="top"><b>BEZ</b> 2X Short BE <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 藍'></span></span> </div>
-    <div class="mid"><span class='price'>$5.57</span> <span class='pct pct-down'>-6.39%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(8)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA240(--)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(6)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-same'>(6)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(7)</span></span></div></div>
+    <div class="mid"><span class='price'>$5.59</span> <span class='pct pct-down'>-6.06%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(8)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA240(--)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(6)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(6)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(7)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('BEZ')" title="置頂">☆</div>
+</div>
+<div class="card 藍" data-code="futu" data-name="富途 futu" data-ticker="FUTU">
+  <div class="left">
+    <div class="top"><b>FUTU</b> 富途 <span class='dots'><span class='dot 綠'></span><span class='arrow'>→</span><span class='dot 藍'></span></span> </div>
+    <div class="mid"><span class='price'>$114.2</span> <span class='pct pct-up'>+1.96%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(117)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(108)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(140)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(114)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(113)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(115)</span></span></div></div>
+  </div>
+  <div class="star" onclick="togglePin('FUTU')" title="置頂">☆</div>
+</div>
+<div class="card 紅" data-code="crcd" data-name="circle反2x crcd" data-ticker="CRCD">
+  <div class="left">
+    <div class="top"><b>CRCD</b> Circle反2X <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span> </div>
+    <div class="mid"><span class='price'>$1.71</span> <span class='pct pct-down'>-7.83%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(2)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(17)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(2)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(2)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(2)</span></span></div></div>
+  </div>
+  <div class="star" onclick="togglePin('CRCD')" title="置頂">☆</div>
 </div>
 <div class="card 紅" data-code="sqqq" data-name="納指3x空 sqqq" data-ticker="SQQQ">
   <div class="left">
     <div class="top"><b>SQQQ</b> 納指3X空 <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span> </div>
-    <div class="mid"><span class='price'>$34.47</span> <span class='pct pct-down'>-8.98%</span></div>
+    <div class="mid"><span class='price'>$34.6</span> <span class='pct pct-down'>-8.63%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(39)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(40)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(56)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(35)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(38)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(39)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('SQQQ')" title="置頂">☆</div>
@@ -272,7 +280,7 @@
 <div class="card 灰" data-code="peng" data-name="penguin peng" data-ticker="PENG">
   <div class="left">
     <div class="top"><b>PENG</b> Penguin <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
-    <div class="mid"><span class='price'>$54.73</span> <span class='pct pct-up'>+2.68%</span></div>
+    <div class="mid"><span class='price'>$54.86</span> <span class='pct pct-up'>+2.93%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(50)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(58)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(35)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(55)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(53)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(50)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('PENG')" title="置頂">☆</div>
@@ -280,7 +288,7 @@
 <div class="card 灰" data-code="be" data-name="bloom energy be" data-ticker="BE">
   <div class="left">
     <div class="top"><b>BE</b> Bloom Energy <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
-    <div class="mid"><span class='price'>$275.3</span> <span class='pct pct-up'>+3.64%</span></div>
+    <div class="mid"><span class='price'>$273.7</span> <span class='pct pct-up'>+3.04%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(244)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(234)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(185)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(274)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(276)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(257)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('BE')" title="置頂">☆</div>
@@ -288,23 +296,15 @@
 <div class="card 灰" data-code="muz" data-name="美光bear muz" data-ticker="MUZ">
   <div class="left">
     <div class="top"><b>MUZ</b> 美光Bear <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
-    <div class="mid"><span class='price'>$7.31</span> <span class='pct pct-down'>-4.69%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(9)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(11)</span></span> <span class='ma-item'><span class='ma-w'>MA240(--)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-same'>(7)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(8)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(9)</span></span></div></div>
+    <div class="mid"><span class='price'>$7.35</span> <span class='pct pct-down'>-4.17%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(9)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(11)</span></span> <span class='ma-item'><span class='ma-w'>MA240(--)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(7)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(8)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(9)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('MUZ')" title="置頂">☆</div>
-</div>
-<div class="card 灰" data-code="crcd" data-name="circle反2x crcd" data-ticker="CRCD">
-  <div class="left">
-    <div class="top"><b>CRCD</b> Circle反2X <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
-    <div class="mid"><span class='price'>$1.75</span> <span class='pct pct-down'>-5.66%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(2)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(17)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(2)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(2)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(2)</span></span></div></div>
-  </div>
-  <div class="star" onclick="togglePin('CRCD')" title="置頂">☆</div>
 </div>
 <div class="card 灰" data-code="xpev" data-name="小鵬adr xpev" data-ticker="XPEV">
   <div class="left">
     <div class="top"><b>XPEV</b> 小鵬ADR <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
-    <div class="mid"><span class='price'>$10.46</span> <span class='pct pct-down'>-1.51%</span></div>
+    <div class="mid"><span class='price'>$10.45</span> <span class='pct pct-down'>-1.60%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(11)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(17)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(10)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(11)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(11)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('XPEV')" title="置頂">☆</div>
@@ -320,7 +320,7 @@
 <div class="card 灰" data-code="nio" data-name="蔚來 nio" data-ticker="NIO">
   <div class="left">
     <div class="top"><b>NIO</b> 蔚來 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
-    <div class="mid"><span class='price'>$3.68</span> <span class='pct pct-up'>+0.55%</span></div>
+    <div class="mid"><span class='price'>$3.67</span> <span class='pct pct-up'>+0.23%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(5)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(4)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('NIO')" title="置頂">☆</div>
