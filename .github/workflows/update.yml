@@ -3,26 +3,31 @@ on:
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install yfinance pandas requests
-      - run: python cloud_board_final.py
+      - name: run board
+        run: python cloud_board_final.py
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      - run: |
+      - name: commit
+        run: |
           git config user.name "bot"
           git config user.email "bot@bot.com"
-      - run: |
-          git config user.name "bot"
-          git config user.email "bot@bot.com"
-          git pull --rebase || true
+          git pull --rebase origin main || true
           git add docs/
-          git commit -m "update" || true
-          git push
+          git commit -m "update ${{ github.run_number }}" || echo "no changes"
+          git push origin main || git push
