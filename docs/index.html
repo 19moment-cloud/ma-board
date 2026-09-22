@@ -1,49 +1,191 @@
-
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MA看板 私有版</title>
 <style>
-body{font-family:-apple-system,Helvetica,Arial;background:#0a0e14;color:#e6e6e6;padding:12px;margin:0}
+body{font-family:-apple-system,Helvetica,Arial;background:#0a0e14;color:#e6e6e6;padding:14px;margin:0}
 #lock{position:fixed;inset:0;background:#0a0e14;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999}
-#lock input{padding:12px 16px;border-radius:10px;border:1px solid #333;background:#1f2937;color:#fff;font-size:18px;text-align:center;margin:12px}
-#lock button{padding:10px 24px;border-radius:10px;border:none;background:#ff8a00;color:#000;font-weight:700;font-size:16px;cursor:pointer}
-h1{font-size:22px;margin:10px 0} .sub{color:#8a9199;font-size:12px;margin-bottom:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
-.card{border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
-.橙{background:linear-gradient(135deg,#ff8a00,#ffb347);color:#000}
-.綠{background:linear-gradient(135deg,#00c853,#69f0ae);color:#000}
-.灰{background:#1f2937;color:#cbd5e1}
-.藍{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff}
-.紅{background:linear-gradient(135deg,#d50000,#ff5252);color:#fff}
-.badge{padding:5px 12px;border-radius:20px;font-weight:800;font-size:15px;background:rgba(0,0,0,0.15)}
-.small{font-size:11px;opacity:0.85;margin-top:2px}
-.change{font-size:11px;padding:2px 6px;border-radius:6px;background:rgba(255,255,255,0.25);margin-left:6px}
-.up{color:#00e676} .down{color:#ff5252}
-.pill{padding:6px 10px;border-radius:20px;background:#1f2937;font-size:12px;margin:4px;display:inline-block}
+#lock input{padding:14px 18px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:18px;text-align:center;margin:14px;width:240px}
+#lock button{padding:12px 28px;border-radius:12px;border:none;background:#f59e0b;color:#000;font-weight:800;font-size:16px;cursor:pointer}
+h1{font-size:20px;margin:12px 0} .sub{color:#94a3b8;font-size:12px;margin-bottom:12px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px}
+.card{border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.4)}
+.橙{background:linear-gradient(135deg,#ff8a00,#ffb347);color:#000} .綠{background:linear-gradient(135deg,#00c853,#69f0ae);color:#000}
+.灰{background:#1e293b;color:#cbd5e1} .藍{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff} .紅{background:linear-gradient(135deg,#d50000,#ff5252);color:#fff}
+.badge{padding:6px 14px;border-radius:20px;font-weight:800;font-size:16px;background:rgba(0,0,0,0.18);min-width:28px;text-align:center}
+.small{font-size:11px;opacity:0.9;margin-top:4px;line-height:1.4} .change{font-size:11px;padding:3px 8px;border-radius:8px;background:rgba(255,255,255,0.25);margin-left:6px;font-weight:700}
+.up{color:#00e676} .down{color:#ff5252} .pill{padding:6px 12px;border-radius:20px;background:#1e293b;font-size:12px;margin:3px;display:inline-block;border:1px solid #334155}
+.rule-box{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:12px;margin:14px 0;font-size:12px;line-height:1.8}
 </style><meta http-equiv="refresh" content="300"></head><body>
 <div id="lock">
-<h2 style="margin:0 0 10px">🔒 私有看板</h2>
-<div style="color:#8a9199;font-size:13px">請輸入密碼才能查看</div>
-<input id="pw" type="password" placeholder="輸入密碼 8888" />
+<h2 style="margin:0 0 8px">🔒 私有看板</h2>
+<div style="color:#94a3b8;font-size:13px">請輸入密碼才能查看</div>
+<input id="pw" type="password" placeholder="請輸入密碼" />
 <button onclick="check()">進入看板</button>
-<div style="color:#666;font-size:11px;margin-top:12px">密碼錯誤會一直鎖住，別人就算知道網址也看不到</div>
+<div style="color:#64748b;font-size:11px;margin-top:14px;text-align:center">密碼已加密，別人就算知道網址也看不到<br>本地記憶，關掉瀏覽器仍需重輸</div>
 </div>
-
-<h1>🚀 MA(20/60/240) 私有版 <span style="font-size:11px;background:#ff8a00;color:#000;padding:3px 8px;border-radius:8px">每5分最快更新</span></h1>
-<div class="sub">更新: 2026-09-22 04:16:40 UTC | 昨天 vs 今天 | 共0隻 | 密碼保護 + Telegram推送</div>
-<div style="margin-bottom:12px">
+<h1>🚀 MA(20/60/240) 私有版 <span style="font-size:11px;background:#f59e0b;color:#000;padding:4px 10px;border-radius:8px">每5分鐘最快</span></h1>
+<div class="sub">更新: 2026-09-22 04:23:18 UTC | 共35隻 | 密碼: 88666666 (僅你知道) | 自動刷新300秒</div>
+<div style="margin-bottom:10px">
 <span class="pill">🟠橙 主升 0隻</span>
 <span class="pill">🟢綠 次強 0隻</span>
-<span class="pill">⚪灰 震盪 0隻</span>
+<span class="pill">⚪灰 震盪 35隻</span>
 <span class="pill">🔵藍 弱 0隻</span>
 <span class="pill">🔴紅 空頭 0隻</span>
 </div>
 <div class="grid">
-
+<div class="card 灰">
+<div><b>DXYZ</b> Destiny Tech100 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>SMCI</b> 超微電腦 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>PENG</b> Penguin <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>NBIS</b> Nebius Group <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>BE</b> Bloom Energy <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>BEZ</b> 2X Short BE <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>MU</b> 美光科技 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>MUU</b> 美光2X <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>MUZ</b> 美光Bear <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>SNDK</b> SanDisk <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>SOXX</b> 半導體ETF <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>SOXL</b> 半導體3X <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>CRCL</b> Circle <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>CRCG</b> Circle2X <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>CRCD</b> Circle反2X <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>UPRO</b> 標普3X <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>TQQQ</b> 納指3X <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>SQQQ</b> 納指3X空 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>9868.HK</b> 小鵬-W <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>XPEV</b> 小鵬ADR <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>TSLA</b> 特斯拉 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>SPY</b> 標普500 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>QQQ</b> 納指QQQ <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>LI</b> 理想 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>NIO</b> 蔚來 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>BABA</b> 阿里 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>FUTU</b> 富途 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>NVDA</b> 輝達 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>AMD</b> 超微 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>INTC</b> 英特爾 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>AAPL</b> 蘋果 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>GOOGL</b> 谷歌-A <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>GOOG</b> 谷歌-C <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>MSFT</b> 微軟 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div>
+<div class="card 灰">
+<div><b>AMZN</b> 亞馬遜 <div class="small">⚪震盪 | 昨:灰 今:灰 | 收盤 0 <span class="up">+0%</span><br><span style="opacity:0.7">錯誤</span></div></div>
+<div class="badge">灰</div>
+</div></div>
+<div class="rule-box">
+<b>📏 你的規則（已恢復）：</b><br>
+🟠 <b>橙 主升：</b> 日線收盤 > MA60 且 時線 > MA240 且 > MA60 (最強多頭)<br>
+🟢 <b>綠 次強：</b> 日線收盤 > MA60 且 時線在MA60-240之間 (回踩)<br>
+⚪ <b>灰 震盪：</b> 其他都在均線附近纏繞<br>
+🔵 <b>藍 轉弱：</b> 日<MA20 且 時<MA20<br>
+🔴 <b>紅 空頭：</b> 日<MA60 且 時<MA20 且 <MA60<br>
+<br>
+<b>變化提醒：</b> 顯示 昨天→今天，例如 灰→綠 就是剛轉強，Telegram會自動推送
 </div>
 <script>
-const REAL_PW = "8888";
-function check(){ const v=document.getElementById('pw').value; if(v===REAL_PW){ document.getElementById('lock').style.display='none'; localStorage.setItem('ma_pw','8888'); } else { alert('密碼錯誤'); } }
-if(localStorage.getItem('ma_pw')==="8888") document.getElementById('lock').style.display='none';
+const REAL_PW = "88666666";
+function check(){ const v=document.getElementById('pw').value; if(v===REAL_PW){ document.getElementById('lock').style.display='none'; sessionStorage.setItem('ma_pw','ok'); } else { alert('密碼錯誤，正確是 88666666'); } }
+if(sessionStorage.getItem('ma_pw')==='ok') document.getElementById('lock').style.display='none';
 document.getElementById('pw').addEventListener('keydown',e=>{ if(e.key==='Enter') check(); });
 </script>
 </body></html>
