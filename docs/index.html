@@ -5,310 +5,325 @@
 #lock{position:fixed;inset:0;background:#0a0e14;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999}
 #lock input{padding:14px 18px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:18px;text-align:center;margin:14px;width:240px}
 #lock button{padding:12px 28px;border-radius:12px;border:none;background:#f59e0b;color:#000;font-weight:800;font-size:16px;cursor:pointer}
-h1{font-size:18px;margin:10px 0} .sub{color:#94a3b8;font-size:11px;margin-bottom:12px}
+.header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0} h1{font-size:18px;margin:0}
+.search{flex:1;min-width:220px;max-width:360px;position:relative}
+.search input{width:100%;padding:10px 14px 10px 36px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:13px;outline:none}
+.search input:focus{border-color:#f59e0b} .search .icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:0.6}
+.sub{color:#94a3b8;font-size:11px;margin-bottom:12px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px;align-items:start}
-.card{border-radius:14px;padding:11px 13px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;min-height:110px;overflow:hidden}
+.card{border-radius:14px;padding:11px 13px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;min-height:110px;overflow:hidden;transition:all 0.2s}
+.card.hide{display:none}
 .橙{background:linear-gradient(135deg,#ff8a00,#ffb347);color:#000} .綠{background:linear-gradient(135deg,#00c853,#69f0ae);color:#000}
 .灰{background:#1e293b;color:#cbd5e1;border:1px solid #2a3441} .藍{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff} .紅{background:linear-gradient(135deg,#d50000,#ff5252);color:#fff}
-.badge{padding:5px 10px;border-radius:16px;font-weight:800;font-size:13px;background:rgba(0,0,0,0.18);min-width:26px;text-align:center;flex-shrink:0}
+.白{background:#ffffff;color:#000;border:2px dashed #94a3b8}
+.badge{padding:5px 10px;border-radius:16px;font-weight:800;font-size:13px;background:rgba(0,0,0,0.18);min-width:26px;text-align:center;flex-shrink:0} .白 .badge{background:#000;color:#fff}
 .left{flex:1;min-width:0} .top{font-size:12px;display:flex;align-items:center;gap:6px;flex-wrap:wrap} .mid{margin-top:6px;display:flex;gap:8px;align-items:center}
-.price{color:#facc15;font-weight:900;font-size:15px;background:rgba(0,0,0,0.32);padding:2px 8px;border-radius:6px}
+.price{color:#facc15;font-weight:900;font-size:15px;background:rgba(0,0,0,0.32);padding:2px 8px;border-radius:6px} .白 .price{background:#000;color:#fff}
 .pct{font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,0.45);color:#fff} .pct-up{color:#4ade80} .pct-down{color:#f87171}
-.dots{display:inline-flex;align-items:center;background:rgba(0,0,0,0.18);padding:2px 7px;border-radius:12px;gap:3px} .dot{width:9px;height:9px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,0.2)} .dot.橙{background:#ff8a00} .dot.綠{background:#00c853} .dot.藍{background:#2962ff} .dot.紅{background:#d50000} .dot.灰{background:#94a3b8} .arrow{font-size:9px}
+.dots{display:inline-flex;align-items:center;background:rgba(0,0,0,0.18);padding:2px 7px;border-radius:12px;gap:3px} .dot{width:9px;height:9px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,0.2)} .dot.橙{background:#ff8a00} .dot.綠{background:#00c853} .dot.藍{background:#2962ff} .dot.紅{background:#d50000} .dot.灰{background:#94a3b8} .dot.白{background:#fff;border:1px solid #000} .arrow{font-size:9px}
 .rsi-inline{font-size:10px;font-weight:900;padding:2px 7px;border-radius:6px;border:1px solid transparent;background:rgba(168,85,247,0.18);color:#e9d5ff} .rsi-inline.rsi-green{border-color:#22c55e;background:rgba(34,197,94,0.15);color:#bbf7d0} .rsi-inline.rsi-red{border-color:#ef4444;background:rgba(239,68,68,0.15);color:#fecaca}
-.ma-box{margin-top:6px;background:rgba(0,0,0,0.55);border-radius:8px;padding:6px 8px} .ma-row{font-size:10px;line-height:1.6;display:flex;flex-wrap:wrap;gap:6px;align-items:center} .ma-k{font-weight:800;opacity:0.9;margin-right:2px} .ma-item{white-space:nowrap} .ma-green{color:#4ade80;font-weight:900} .ma-red{color:#f87171;font-weight:900} 
+.ma-box{margin-top:6px;background:#000;border-radius:8px;padding:7px 9px;border:1px solid #111} /* 不透明黑底 */
+.ma-row{font-size:11px;line-height:1.7;display:flex;flex-wrap:wrap;gap:6px;align-items:center} 
+.ma-w{color:#ffffff;font-weight:600} /* 日K 時K MA20等白色 */
+.ma-item{white-space:nowrap} .ma-green{color:#4ade80;font-weight:900} .ma-red{color:#f87171;font-weight:900} .ma-same{color:#ffffff}
 .pill{padding:5px 10px;border-radius:18px;background:#1e293b;font-size:11px;margin:3px;display:inline-block;border:1px solid #334155}
 .rule-box{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:12px;margin:14px 0;font-size:11px;line-height:1.8}
 .ver{background:#78350f;color:#fde68a;border:1px solid #92400e;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:800}
 </style><meta http-equiv="refresh" content="300"></head><body>
 <div id="lock"><h2 style="margin:0 0 8px">🔒 私有看板</h2><div style="color:#94a3b8;font-size:13px">請輸入密碼</div><input id="pw" type="password" placeholder="請輸入密碼"/><button onclick="check()">進入</button></div>
-<h1>🚀 MA(20/60/240) 私有版 <span class="ver">V7</span></h1>
-<div class="sub">更新: 2026-09-22 13:47:05 香港時間（股票最新價時間） | 共35隻 | 密碼 88666666 | 當前價含盤前後 | 排序橙>綠>藍>紅>灰</div>
+
+<div class="header">
+<h1>🚀 MA(20/60/240) 私有版 <span class="ver">V10</span></h1>
+<div class="search"><span class="icon">🔍</span><input id="search" type="text" placeholder="搜索代號或名稱，例如 TSLA 特斯拉 / NVDA 輝達 (模糊搜索)" /></div>
+</div>
+
+<div class="sub">更新: 2026-09-22 13:54:05 香港時間 | 共35隻 | 當前價含盤前後 時k含盤前後 | 排序橙>綠>藍>紅>灰>白</div>
 <div style="margin-bottom:8px">
 <span class="pill">🟠橙 主升 23隻</span>
 <span class="pill">🟢綠 次強 1隻</span>
 <span class="pill">🔵藍 弱 2隻</span>
 <span class="pill">🔴紅 空頭 5隻</span>
 <span class="pill">⚪灰 震盪 4隻</span>
+<span class="pill" style="background:#fff;color:#000">⬜白 限流 0隻</span>
 </div>
-<div class="grid">
-<div class="card 橙">
+<div class="grid" id="grid">
+<div class="card 橙" data-code="smci" data-name="超微電腦 smci">
   <div class="left">
     <div class="top"><b>SMCI</b> 超微電腦 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$41.44</span> <span class='pct pct-up'>+6.01%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(38)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(33)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(34)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(41)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(39)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(38)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(38)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(33)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(34)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(41)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(39)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(38)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="nbis" data-name="nebius group nbis">
   <div class="left">
     <div class="top"><b>NBIS</b> Nebius Group <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$234.15</span> <span class='pct pct-up'>+4.75%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(218)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(215)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(153)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(230)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(222)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(219)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(218)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(215)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(153)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(230)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(222)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(219)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="mu" data-name="美光科技 mu">
   <div class="left">
     <div class="top"><b>MU</b> 美光科技 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$1044.26</span> <span class='pct pct-up'>+2.80%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(963)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(945)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(573)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(1037)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(991)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(973)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(963)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(945)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(573)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(1037)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(991)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(973)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="muu" data-name="美光2x muu">
   <div class="left">
     <div class="top"><b>MUU</b> 美光2X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$35.63</span> <span class='pct pct-up'>+5.66%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(31)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(32)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(18)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(35)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(32)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(31)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(31)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(32)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(18)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(35)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(32)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(31)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="sndk" data-name="sandisk sndk">
   <div class="left">
     <div class="top"><b>SNDK</b> SanDisk <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$1776.34</span> <span class='pct pct-down'>-0.86%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(1600)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(1569)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(929)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-green'>(1785)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(1670)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(1635)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(1600)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(1569)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(929)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(1785)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(1670)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(1635)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="soxx" data-name="半導體etf soxx">
   <div class="left">
-    <div class="top"><b>SOXX</b> 半導體ETF <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
+    <div class="top"><b>SOXX</b> 半導體ETF <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$562.68</span> <span class='pct pct-up'>+5.55%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(516)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(535)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(417)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(550)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(528)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(516)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(516)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(535)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(417)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(550)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(528)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(516)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="soxl" data-name="半導體3x soxl">
   <div class="left">
-    <div class="top"><b>SOXL</b> 半導體3X <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
+    <div class="top"><b>SOXL</b> 半導體3X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$144.7</span> <span class='pct pct-up'>+17.00%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(115)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(141)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(101)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(136)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(121)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(114)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(115)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(141)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(101)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(136)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(121)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(114)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="crcl" data-name="circle crcl">
   <div class="left">
     <div class="top"><b>CRCL</b> Circle <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$94.7</span> <span class='pct pct-up'>+3.18%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(92)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(75)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(90)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(95)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(88)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(92)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(92)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(75)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(90)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(95)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(88)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(92)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="crcg" data-name="circle2x crcg">
   <div class="left">
     <div class="top"><b>CRCG</b> Circle2X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$15.89</span> <span class='pct pct-up'>+6.56%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(16)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(12)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(29)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(16)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(14)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(16)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(16)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(29)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(16)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(14)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(16)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="upro" data-name="標普3x upro">
   <div class="left">
     <div class="top"><b>UPRO</b> 標普3X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$154.25</span> <span class='pct pct-up'>+4.80%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(149)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(146)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(126)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(152)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(148)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(148)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(149)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(146)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(126)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(152)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(148)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(148)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="tqqq" data-name="納指3x tqqq">
   <div class="left">
     <div class="top"><b>TQQQ</b> 納指3X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$79.44</span> <span class='pct pct-up'>+9.36%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(71)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(71)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(61)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(77)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(73)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(71)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(71)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(71)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(61)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(77)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(73)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(71)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="tsla" data-name="特斯拉 tsla">
   <div class="left">
     <div class="top"><b>TSLA</b> 特斯拉 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$375.28</span> <span class='pct pct-up'>+3.02%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(360)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(359)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(403)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(372)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(367)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(363)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(360)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(359)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(403)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(372)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(367)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(363)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="spy" data-name="標普500 spy">
   <div class="left">
     <div class="top"><b>SPY</b> 標普500 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$773.83</span> <span class='pct pct-up'>+1.59%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(763)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(756)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(705)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(769)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(763)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(764)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(763)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(756)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(705)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(769)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(763)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(764)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="qqq" data-name="納指qqq qqq">
   <div class="left">
     <div class="top"><b>QQQ</b> 納指QQQ <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$742.99</span> <span class='pct pct-up'>+3.09%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(714)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(711)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(653)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(734)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(721)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(714)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(714)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(711)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(653)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(734)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(721)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(714)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="baba" data-name="阿里 baba">
   <div class="left">
-    <div class="top"><b>BABA</b> 阿里 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
+    <div class="top"><b>BABA</b> 阿里 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$116.37</span> <span class='pct pct-up'>+2.76%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(113)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(115)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(138)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(115)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(111)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(111)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(113)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(115)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(138)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(115)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(111)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(111)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="nvda" data-name="輝達 nvda">
   <div class="left">
     <div class="top"><b>NVDA</b> 輝達 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$227.29</span> <span class='pct pct-up'>+2.26%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(219)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(212)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(196)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(225)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(221)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(221)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(219)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(212)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(196)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(225)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(221)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(221)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="amd" data-name="超微 amd">
   <div class="left">
-    <div class="top"><b>AMD</b> 超微 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> <span class='rsi-inline rsi-green'>RSI14 73</span></div>
+    <div class="top"><b>AMD</b> 超微 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> <span class='rsi-inline rsi-green'>RSI14(73)</span></div>
     <div class="mid"><span class='price'>$619.98</span> <span class='pct pct-up'>+10.75%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(498)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(504)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(336)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(594)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(556)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(505)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(498)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(504)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(336)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(594)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(556)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(505)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="intc" data-name="英特爾 intc">
   <div class="left">
-    <div class="top"><b>INTC</b> 英特爾 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> <span class='rsi-inline rsi-green'>RSI14 71</span></div>
+    <div class="top"><b>INTC</b> 英特爾 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> <span class='rsi-inline rsi-green'>RSI14(71)</span></div>
     <div class="mid"><span class='price'>$123.85</span> <span class='pct pct-up'>+14.04%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(97)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(101)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(71)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(118)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(111)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(100)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(97)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(101)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(71)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(118)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(111)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(100)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="aapl" data-name="蘋果 aapl">
   <div class="left">
     <div class="top"><b>AAPL</b> 蘋果 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$338.71</span> <span class='pct pct-up'>+0.77%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(324)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(317)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(283)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(337)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(336)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(328)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(324)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(317)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(283)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(337)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(336)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(328)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="googl" data-name="谷歌-a googl">
   <div class="left">
     <div class="top"><b>GOOGL</b> 谷歌-A <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$356.2</span> <span class='pct pct-up'>+1.91%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(342)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(347)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(327)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(354)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(350)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(341)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(342)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(347)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(327)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(354)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(350)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(341)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="goog" data-name="谷歌-c goog">
   <div class="left">
-    <div class="top"><b>GOOG</b> 谷歌-C <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
+    <div class="top"><b>GOOG</b> 谷歌-C <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$352.15</span> <span class='pct pct-up'>+2.25%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(339)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(345)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(326)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(350)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(346)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(338)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(339)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(345)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(326)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(350)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(346)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(338)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="msft" data-name="微軟 msft">
   <div class="left">
     <div class="top"><b>MSFT</b> 微軟 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$501.49</span> <span class='pct pct-up'>+1.56%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(498)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(452)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(442)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(497)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(496)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(498)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(498)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(452)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(442)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(497)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(496)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(498)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 橙">
+<div class="card 橙" data-code="amzn" data-name="亞馬遜 amzn">
   <div class="left">
     <div class="top"><b>AMZN</b> 亞馬遜 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span> </div>
     <div class="mid"><span class='price'>$259.15</span> <span class='pct pct-up'>+2.14%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(256)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(254)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(239)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(257)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(253)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(254)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(256)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(254)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(239)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(257)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(253)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(254)</span></span></div></div>
   </div>
   <div class="badge">橙</div>
 </div>
-<div class="card 綠">
+<div class="card 綠" data-code="futu" data-name="富途 futu">
   <div class="left">
     <div class="top"><b>FUTU</b> 富途 <span class='dots'><span class='dot 綠'></span><span class='arrow'>→</span><span class='dot 綠'></span></span> </div>
     <div class="mid"><span class='price'>$114.61</span> <span class='pct pct-up'>+2.32%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(117)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(108)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(140)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(114)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(112)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(115)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(117)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(108)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(140)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(114)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(112)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(115)</span></span></div></div>
   </div>
   <div class="badge">綠</div>
 </div>
-<div class="card 藍">
+<div class="card 藍" data-code="dxyz" data-name="destiny tech100 dxyz">
   <div class="left">
-    <div class="top"><b>DXYZ</b> Destiny Tech100 <span class='dots'><span class='dot 綠'></span><span class='arrow'>→</span><span class='dot 藍'></span></span> </div>
+    <div class="top"><b>DXYZ</b> Destiny Tech100 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 藍'></span></span> </div>
     <div class="mid"><span class='price'>$31.05</span> <span class='pct pct-down'>-0.83%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(33)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(29)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(31)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-green'>(31)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(31)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(32)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(33)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(29)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(31)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(31)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(31)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(32)</span></span></div></div>
   </div>
   <div class="badge">藍</div>
 </div>
-<div class="card 藍">
+<div class="card 藍" data-code="bez" data-name="2x short be bez">
   <div class="left">
-    <div class="top"><b>BEZ</b> 2X Short BE <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 藍'></span></span> </div>
+    <div class="top"><b>BEZ</b> 2X Short BE <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 藍'></span></span> </div>
     <div class="mid"><span class='price'>$5.59</span> <span class='pct pct-down'>-6.05%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(8)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(12)</span></span> <span class='ma-item'>MA240(--)</span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-green'>(6)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(6)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(7)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(8)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(12)</span></span> <span class='ma-item'><span class='ma-w'> MA240(--)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(6)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(6)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(7)</span></span></div></div>
   </div>
   <div class="badge">藍</div>
 </div>
-<div class="card 紅">
+<div class="card 紅" data-code="muz" data-name="美光bear muz">
   <div class="left">
     <div class="top"><b>MUZ</b> 美光Bear <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span> </div>
     <div class="mid"><span class='price'>$7.23</span> <span class='pct pct-down'>-5.74%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(9)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(11)</span></span> <span class='ma-item'>MA240(--)</span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-green'>(7)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(8)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(9)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(9)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(11)</span></span> <span class='ma-item'><span class='ma-w'> MA240(--)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(7)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(8)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(9)</span></span></div></div>
   </div>
   <div class="badge">紅</div>
 </div>
-<div class="card 紅">
+<div class="card 紅" data-code="crcd" data-name="circle反2x crcd">
   <div class="left">
     <div class="top"><b>CRCD</b> Circle反2X <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span> </div>
     <div class="mid"><span class='price'>$1.74</span> <span class='pct pct-down'>-6.20%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(2)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(4)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(17)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class=''>(2)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(2)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(2)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(2)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(17)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-same'>(2)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(2)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(2)</span></span></div></div>
   </div>
   <div class="badge">紅</div>
 </div>
-<div class="card 紅">
+<div class="card 紅" data-code="sqqq" data-name="納指3x空 sqqq">
   <div class="left">
     <div class="top"><b>SQQQ</b> 納指3X空 <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span> </div>
     <div class="mid"><span class='price'>$34.37</span> <span class='pct pct-down'>-9.24%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(39)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(40)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(56)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-green'>(36)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(38)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(39)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(39)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(40)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(56)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(36)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(38)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(39)</span></span></div></div>
   </div>
   <div class="badge">紅</div>
 </div>
-<div class="card 紅">
+<div class="card 紅" data-code="9868.hk" data-name="小鵬-w 9868.hk">
   <div class="left">
     <div class="top"><b>9868.HK</b> 小鵬-W <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span> </div>
-    <div class="mid"><span class='price'>$40.54</span> <span class='pct pct-up'>+0.10%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(43)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(47)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(67)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-green'>(41)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(41)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(44)</span></span></div></div>
+    <div class="mid"><span class='price'>$40.52</span> <span class='pct pct-up'>+0.05%</span></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(43)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(47)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(67)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(41)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(41)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(44)</span></span></div></div>
   </div>
   <div class="badge">紅</div>
 </div>
-<div class="card 紅">
+<div class="card 紅" data-code="li" data-name="理想 li">
   <div class="left">
     <div class="top"><b>LI</b> 理想 <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span> </div>
     <div class="mid"><span class='price'>$11.57</span> <span class='pct pct-down'>-4.71%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(12)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(12)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(16)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-green'>(12)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(12)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(12)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(16)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(12)</span></span></div></div>
   </div>
   <div class="badge">紅</div>
 </div>
-<div class="card 灰">
+<div class="card 灰" data-code="peng" data-name="penguin peng">
   <div class="left">
-    <div class="top"><b>PENG</b> Penguin <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
+    <div class="top"><b>PENG</b> Penguin <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
     <div class="mid"><span class='price'>$56.0</span> <span class='pct pct-up'>+5.07%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(50)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(58)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(35)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(55)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(52)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(50)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(50)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(58)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(35)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(55)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(52)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(50)</span></span></div></div>
   </div>
   <div class="badge">灰</div>
 </div>
-<div class="card 灰">
+<div class="card 灰" data-code="be" data-name="bloom energy be">
   <div class="left">
-    <div class="top"><b>BE</b> Bloom Energy <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
+    <div class="top"><b>BE</b> Bloom Energy <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
     <div class="mid"><span class='price'>$273.98</span> <span class='pct pct-up'>+3.14%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-red'>(244)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(234)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(185)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(272)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(276)</span></span> <span class='ma-item'>MA240<span class='ma-red'>(256)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(244)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(234)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(185)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(272)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(276)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(256)</span></span></div></div>
   </div>
   <div class="badge">灰</div>
 </div>
-<div class="card 灰">
+<div class="card 灰" data-code="xpev" data-name="小鵬adr xpev">
   <div class="left">
-    <div class="top"><b>XPEV</b> 小鵬ADR <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
+    <div class="top"><b>XPEV</b> 小鵬ADR <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
     <div class="mid"><span class='price'>$10.49</span> <span class='pct pct-down'>-1.22%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(11)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(12)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(17)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(10)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(11)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(11)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(11)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(12)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(17)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(10)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(11)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(11)</span></span></div></div>
   </div>
   <div class="badge">灰</div>
 </div>
-<div class="card 灰">
+<div class="card 灰" data-code="nio" data-name="蔚來 nio">
   <div class="left">
-    <div class="top"><b>NIO</b> 蔚來 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
+    <div class="top"><b>NIO</b> 蔚來 <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 灰'></span></span> </div>
     <div class="mid"><span class='price'>$3.68</span> <span class='pct pct-up'>+0.55%</span></div>
-    <div class="ma-box"><div class='ma-row'><span class='ma-k'>日k：</span><span class='ma-item'>MA20<span class='ma-green'>(4)</span></span> <span class='ma-item'>MA60<span class='ma-green'>(4)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(5)</span></span></div><div class='ma-row'><span class='ma-k'>時k：</span><span class='ma-item'>MA20<span class='ma-red'>(4)</span></span> <span class='ma-item'>MA60<span class='ma-red'>(4)</span></span> <span class='ma-item'>MA240<span class='ma-green'>(4)</span></span></div></div>
+    <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(5)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(4)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(4)</span></span></div></div>
   </div>
   <div class="badge">灰</div>
 </div></div>
@@ -318,12 +333,30 @@ h1{font-size:18px;margin:10px 0} .sub{color:#94a3b8;font-size:11px;margin-bottom
 🟢 股價日k站上MA60，時k站上MA60（時k未站上240MA）。<br>
 🔵 股價日k跌穿MA20，時k跌穿MA20。<br>
 🔴 股價日k跌穿MA60，時k跌穿MA20和MA60。<br>
-⚪ 不符合以上條件。
+⚪ 不符合以上條件。<br>
+⬜ 白=限流
 </div>
 <script>
 const REAL_PW="88666666";
 function check(){const v=document.getElementById('pw').value;if(v===REAL_PW){document.getElementById('lock').style.display='none';sessionStorage.setItem('ma_pw','ok');}else{alert('密碼錯誤');}}
 if(sessionStorage.getItem('ma_pw')==='ok')document.getElementById('lock').style.display='none';
 document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')check();});
+
+// 模糊搜索 代號或名稱
+const searchInput = document.getElementById('search');
+const grid = document.getElementById('grid');
+searchInput.addEventListener('input', (e)=>{
+  const q = e.target.value.trim().toLowerCase();
+  const cards = grid.querySelectorAll('.card');
+  cards.forEach(card=>{
+    const code = card.getAttribute('data-code')||'';
+    const name = card.getAttribute('data-name')||'';
+    if(!q) card.classList.remove('hide');
+    else {
+      if(code.includes(q) || name.includes(q)) card.classList.remove('hide');
+      else card.classList.add('hide');
+    }
+  });
+});
 </script>
 </body></html>
