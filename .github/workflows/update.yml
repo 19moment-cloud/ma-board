@@ -1,0 +1,28 @@
+name: MA看板私有版最快5分
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install yfinance pandas requests
+      - run: python cloud_board_final.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - run: |
+          git config --global user.name "ma-bot"
+          git config --global user.email "bot@github.com"
+          git add docs/
+          git commit -m "更新 $(date)" || echo "無變化"
+          git push
