@@ -10,5 +10,33 @@
   {
     "code": "GLW",
     "name": "GLW"
+  },
+  {
+    "code": "^VIX",
+    "name": "^VIX"
+  },
+  {
+    "code": "BTC-USD",
+    "name": "BTC-USD"
+  },
+  {
+    "code": "ETH-USD",
+    "name": "ETH-USD"
+  },
+  {
+    "code": "SPCX",
+    "name": "SPCX"
+  },
+  {
+    "code": "SKHY",
+    "name": "SKHY"
+  },
+  {
+    "code": "LKNCY",
+    "name": "LKNCY"
+  },
+  {
+    "code": "XIACY",
+    "name": "XIACY"
   }
 ]
