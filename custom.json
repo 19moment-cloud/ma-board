@@ -38,5 +38,53 @@
   {
     "code": "XIACY",
     "name": "XIACY"
+  },
+  {
+    "code": "1810.HK",
+    "name": "1810.HK"
+  },
+  {
+    "code": "PAXG-USD",
+    "name": "PAXG-USD"
+  },
+  {
+    "code": "^HSI",
+    "name": "^HSI"
+  },
+  {
+    "code": "HSTECH.HK",
+    "name": "HSTECH.HK"
+  },
+  {
+    "code": "^N225",
+    "name": "^N225"
+  },
+  {
+    "code": "^KS11",
+    "name": "^KS11"
+  },
+  {
+    "code": "^DJI",
+    "name": "^DJI"
+  },
+  {
+    "code": "^RUT",
+    "name": "^RUT"
+  },
+  {
+    "code": "^TWII",
+    "name": "^TWII"
+  },
+  {
+    "code": "^FTSE",
+    "name": "^FTSE"
+  },
+  {
+    "code": "^GDAXI",
+    "name": "^GDAXI"
+  },
+  {
+    "code": "^FCHI",
+    "name": "^FCHI"
   }
 ]
