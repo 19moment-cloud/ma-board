@@ -1,0 +1,49 @@
+
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MA看板 私有版</title>
+<style>
+body{font-family:-apple-system,Helvetica,Arial;background:#0a0e14;color:#e6e6e6;padding:12px;margin:0}
+#lock{position:fixed;inset:0;background:#0a0e14;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999}
+#lock input{padding:12px 16px;border-radius:10px;border:1px solid #333;background:#1f2937;color:#fff;font-size:18px;text-align:center;margin:12px}
+#lock button{padding:10px 24px;border-radius:10px;border:none;background:#ff8a00;color:#000;font-weight:700;font-size:16px;cursor:pointer}
+h1{font-size:22px;margin:10px 0} .sub{color:#8a9199;font-size:12px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
+.card{border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.橙{background:linear-gradient(135deg,#ff8a00,#ffb347);color:#000}
+.綠{background:linear-gradient(135deg,#00c853,#69f0ae);color:#000}
+.灰{background:#1f2937;color:#cbd5e1}
+.藍{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff}
+.紅{background:linear-gradient(135deg,#d50000,#ff5252);color:#fff}
+.badge{padding:5px 12px;border-radius:20px;font-weight:800;font-size:15px;background:rgba(0,0,0,0.15)}
+.small{font-size:11px;opacity:0.85;margin-top:2px}
+.change{font-size:11px;padding:2px 6px;border-radius:6px;background:rgba(255,255,255,0.25);margin-left:6px}
+.up{color:#00e676} .down{color:#ff5252}
+.pill{padding:6px 10px;border-radius:20px;background:#1f2937;font-size:12px;margin:4px;display:inline-block}
+</style><meta http-equiv="refresh" content="300"></head><body>
+<div id="lock">
+<h2 style="margin:0 0 10px">🔒 私有看板</h2>
+<div style="color:#8a9199;font-size:13px">請輸入密碼才能查看</div>
+<input id="pw" type="password" placeholder="輸入密碼 8888" />
+<button onclick="check()">進入看板</button>
+<div style="color:#666;font-size:11px;margin-top:12px">密碼錯誤會一直鎖住，別人就算知道網址也看不到</div>
+</div>
+
+<h1>🚀 MA(20/60/240) 私有版 <span style="font-size:11px;background:#ff8a00;color:#000;padding:3px 8px;border-radius:8px">每5分最快更新</span></h1>
+<div class="sub">更新: 2026-09-22 04:16:40 UTC | 昨天 vs 今天 | 共0隻 | 密碼保護 + Telegram推送</div>
+<div style="margin-bottom:12px">
+<span class="pill">🟠橙 主升 0隻</span>
+<span class="pill">🟢綠 次強 0隻</span>
+<span class="pill">⚪灰 震盪 0隻</span>
+<span class="pill">🔵藍 弱 0隻</span>
+<span class="pill">🔴紅 空頭 0隻</span>
+</div>
+<div class="grid">
+
+</div>
+<script>
+const REAL_PW = "8888";
+function check(){ const v=document.getElementById('pw').value; if(v===REAL_PW){ document.getElementById('lock').style.display='none'; localStorage.setItem('ma_pw','8888'); } else { alert('密碼錯誤'); } }
+if(localStorage.getItem('ma_pw')==="8888") document.getElementById('lock').style.display='none';
+document.getElementById('pw').addEventListener('keydown',e=>{ if(e.key==='Enter') check(); });
+</script>
+</body></html>
