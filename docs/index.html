@@ -7,7 +7,7 @@
 #lock button{padding:12px 28px;border-radius:12px;border:none;background:#f59e0b;color:#000;font-weight:800;font-size:16px;cursor:pointer}
 .header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0} h1{font-size:18px;margin:0} .search{flex:1;min-width:180px;max-width:300px;position:relative} 
 .search input{width:100%;padding:10px 14px 10px 36px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:12px;outline:none} .search input:focus{border-color:#f59e0b} .search .icon{position:absolute;left:10px;top:50%;transform:translateY(-50%)}
-.sub{color:#94a3b8;font-size:11px;margin:2px 0} 
+.sub{color:#94a3b8;font-size:11px;margin-bottom:12px}
 .addRow{display:flex;gap:8px;align-items:center;margin:0 0 12px;flex-wrap:wrap} .addRow input{flex:1;min-width:200px;max-width:400px;padding:10px 14px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:12px;outline:none} .addRow input:focus{border-color:#f59e0b} .addbtn{padding:10px 16px;border-radius:12px;border:none;background:#f59e0b;color:#000;font-weight:800;cursor:pointer;white-space:nowrap}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px;align-items:start}
 .pinned-section{margin-bottom:14px} .pinned-title{font-size:13px;color:#fde68a;margin:0 0 8px;display:none} .pinned-title.show{display:block}
@@ -26,13 +26,12 @@
 <div id="lock"><h2 style="margin:0 0 8px">🔒 私有看板</h2><div style="color:#94a3b8;font-size:13px">請輸入密碼</div><input id="pw" type="password" placeholder="請輸入密碼"/><button onclick="check()">進入</button></div>
 
 <div class="header">
-<h1>🚀 MA(20/60/240) 私有版 <span class="ver">V14</span></h1>
+<h1>🚀 MA(20/60/240) 私有版 <span class="ver">V15</span></h1>
 <div class="search"><span class="icon">🔍</span><input id="search" type="text" placeholder="搜索代號/名稱模糊" /></div>
 </div>
-<div class="addRow"><input id="addInput" type="text" placeholder="加股：輸入 PLTR / 0700 / 0700.HK / 9988.HK 回車 (模糊支持)" /><button class="addbtn" onclick="addStock()">+ 加股</button><button class="addbtn" style="background:#1e293b;color:#fff;border:1px solid #334155" onclick="clearCustom()">清空自加</button></div>
+<div class="addRow"><input id="addInput" type="text" placeholder="加股：輸入 PLTR / 0700 / 0700.HK / 9988.HK 回車" /><button class="addbtn" onclick="addStock()">+ 加股</button><button class="addbtn" style="background:#1e293b;color:#fff;border:1px solid #334155" onclick="clearCustom()">清空自加</button></div>
 
-<div class="sub">更新: 2026-09-22 14:53:57 香港時間 | 共<span id="count">35</span>隻</div>
-<div class="sub">自加<span id="customCount">0</span>隻 置頂<span id="pinCount">0</span>隻 | 點右上角☆置頂 | 加股後匯出給我加到雲端</div>
+<div class="sub">更新: 2026-09-22 15:04:02 香港時間 | 共<span id="count">35</span>隻 自加<span id="customCount">0</span>隻 置頂<span id="pinCount">0</span>隻 |</div>
 
 <div class="pinned-section"><div id="pinnedTitle" class="pinned-title">⭐ 置頂觀察</div><div id="pinnedGrid" class="grid"></div></div>
 
@@ -281,7 +280,7 @@
 <div class="card 紅" data-code="9868.hk" data-name="小鵬-w 9868.hk" data-ticker="9868.HK">
   <div class="left">
     <div class="top"><b>9868.HK</b> 小鵬-W <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span> </div>
-    <div class="mid"><span class='price'>$40.56</span> <span class='pct pct-up'>+0.15%</span></div>
+    <div class="mid"><span class='price'>$40.6</span> <span class='pct pct-up'>+0.25%</span></div>
     <div class="ma-box"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(43)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(47)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(67)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(41)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(41)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(44)</span></span></div></div>
   </div>
   <div class="star" onclick="togglePin('9868.HK')" title="置頂">☆</div>
@@ -345,14 +344,13 @@ function check(){const v=document.getElementById('pw').value;if(v===REAL_PW){doc
 if(sessionStorage.getItem('ma_pw')==='ok')document.getElementById('lock').style.display='none';
 document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')check();});
 
-// 置頂
-let pinnedStocks = JSON.parse(localStorage.getItem('pinnedV14')||'[]');
+let pinnedStocks = JSON.parse(localStorage.getItem('pinnedV15')||localStorage.getItem('pinnedV14')||'[]');
 function isPinned(t){ return pinnedStocks.includes(t); }
 function togglePin(ticker){
   ticker=ticker.toUpperCase();
   if(isPinned(ticker)) pinnedStocks=pinnedStocks.filter(t=>t!==ticker);
   else pinnedStocks.push(ticker);
-  localStorage.setItem('pinnedV14', JSON.stringify(pinnedStocks));
+  localStorage.setItem('pinnedV15', JSON.stringify(pinnedStocks));
   renderPins(); updateStars();
 }
 function renderPins(){
@@ -366,36 +364,24 @@ function renderPins(){
   });
   if(count>0) pinnedTitle.classList.add('show'); else pinnedTitle.classList.remove('show');
   document.getElementById('pinCount').innerText=count;
-  // 更新克隆的星星狀態
   pinnedGrid.querySelectorAll('.card').forEach(card=>{ let t=(card.getAttribute('data-ticker')||'').toUpperCase(); let s=card.querySelector('.star'); if(s){ s.innerText=isPinned(t)?'★':'☆'; s.classList.toggle('pinned', isPinned(t)); } });
 }
 function updateStars(){ document.querySelectorAll('.card').forEach(card=>{ let t=(card.getAttribute('data-ticker')||card.getAttribute('data-code')||'').toUpperCase(); let star=card.querySelector('.star'); if(!star) return; if(isPinned(t)){ star.innerText='★'; star.classList.add('pinned'); } else{ star.innerText='☆'; star.classList.remove('pinned'); } }); renderPins(); }
 
-// 搜索
 const searchInput=document.getElementById('search');
 function doSearch(q){ q=q.trim().toLowerCase(); document.querySelectorAll('#grid .card, #customGrid .card').forEach(card=>{ if(card.closest('#pinnedGrid')) return; const code=card.getAttribute('data-code')||''; const name=card.getAttribute('data-name')||''; if(!q) card.classList.remove('hide'); else{ if(code.includes(q)||name.includes(q)) card.classList.remove('hide'); else card.classList.add('hide'); } }); }
 searchInput.addEventListener('input', e=>doSearch(e.target.value));
 
-// 自加 - 新策略：不前端抓Yahoo，避免失敗，加入清單等雲端算
-let customStocks = JSON.parse(localStorage.getItem('customStocksV14')||'[]');
+let customStocks = JSON.parse(localStorage.getItem('customStocksV14')||localStorage.getItem('customStocksV13')||'[]');
 const customGrid=document.getElementById('customGrid');
-function saveCustom(){ localStorage.setItem('customStocksV14', JSON.stringify(customStocks)); document.getElementById('customCount').innerText=customStocks.length; document.getElementById('count').innerText = 35 + customStocks.length; }
+function saveCustom(){ localStorage.setItem('customStocksV15', JSON.stringify(customStocks)); localStorage.setItem('customStocksV14', JSON.stringify(customStocks)); document.getElementById('customCount').innerText=customStocks.length; document.getElementById('count').innerText = 35 + customStocks.length; }
 function clearCustom(){ if(!confirm('清空所有自加？')) return; customStocks=[]; saveCustom(); customGrid.innerHTML=''; renderPins(); }
-function exportCustom(){ if(customStocks.length===0){ alert('還沒有自加股票'); return; } let codeStr=customStocks.map(s=>`    ("${s.code}", "${s.name||s.code}"),`).join("\n"); let full=`自加清單 共${customStocks.length}隻：\n${codeStr}\n\n把這段發給我，我幫你加到雲端版，下次自動更新`; navigator.clipboard.writeText(full).then(()=>alert('已複製！\n\n'+full)).catch(()=>prompt('複製這段發我：', full)); }
-
-function normalizeTicker(input){
-  input=input.trim().toUpperCase();
-  if(!input) return null;
-  // 支持中文？先去掉中文，保留代號
-  // 模糊：0700 -> 0700.HK, 4位數字 -> .HK
-  if(/^\d{3,5}$/.test(input)) return input+'.HK';
-  return input;
-}
+function exportCustom(){ if(customStocks.length===0){ alert('還沒有自加股票'); return; } let codeStr=customStocks.map(s=>`    ("${s.code}", "${s.name||s.code}"),`).join("\n"); let full=`自加清單 共${customStocks.length}隻：\n${codeStr}\n\n把這段發給我，我幫你加到雲端版`; navigator.clipboard.writeText(full).then(()=>alert('已複製！\n\n'+full)).catch(()=>prompt('複製這段發我：', full)); }
+function normalizeTicker(input){ input=input.trim().toUpperCase(); if(!input) return null; if(/^\d{3,5}$/.test(input)) return input+'.HK'; return input; }
 
 async function addStock(input){
   let raw=(input||document.getElementById('addInput').value||'').trim();
   if(!raw) return;
-  // 提取代號，支持「0700 騰訊」這種
   let firstToken=raw.split(/[\s,，]+/)[0];
   let ticker=normalizeTicker(firstToken);
   let name=raw.replace(firstToken,'').trim()||firstToken;
@@ -404,58 +390,26 @@ async function addStock(input){
   customStocks.push({code:ticker, name:name});
   saveCustom();
   let cardId='custom-'+ticker.replace(/\./g,'-');
-  // 顯示等待雲端卡片，不嘗試前端Yahoo，避免失敗
-  customGrid.insertAdjacentHTML('beforeend', `
-  <div class="card 白 custom" id="${cardId}" data-code="${ticker.toLowerCase()}" data-name="${name.toLowerCase()} ${ticker.toLowerCase()}" data-ticker="${ticker}">
-    <div class="left">
-      <div class="top"><b>${ticker}</b> ${name} <span class="dots"><span class="dot 白"></span><span class="arrow">→</span><span class="dot 白"></span></span> <span style="font-size:10px;cursor:pointer" onclick="removeCustom('${ticker}')">❌</span></div>
-      <div class="mid"><span class="price">已加入自加清單</span> <span class="pct">等待雲端</span></div>
-      <div class="ma-box"><div class="ma-row"><span class="ma-w">已保存到瀏覽器，下次雲端更新(5分)後自動算MA</span></div><div class="ma-row"><span class="ma-w">點下方「匯出」發我，我幫你加到雲端永久版</span></div></div>
-    </div>
-    <div class="star" onclick="togglePin('${ticker}')">☆</div>
-  </div>`);
+  customGrid.insertAdjacentHTML('beforeend', `<div class="card 白 custom" id="${cardId}" data-code="${ticker.toLowerCase()}" data-name="${name.toLowerCase()} ${ticker.toLowerCase()}" data-ticker="${ticker}"><div class="left"><div class="top"><b>${ticker}</b> ${name} <span class="dots"><span class="dot 白"></span><span class="arrow">→</span><span class="dot 白"></span></span> <span style="font-size:10px;cursor:pointer" onclick="removeCustom('${ticker}')">❌</span></div><div class="mid"><span class="price">已加入自加清單</span> <span class="pct">等待雲端</span></div><div class="ma-box"><div class="ma-row"><span class="ma-w">已保存，等待下次雲端更新(5分)後自動算MA，點匯出發我</span></div></div></div><div class="star" onclick="togglePin('${ticker}')">☆</div></div>`);
   renderPins(); updateStars();
-  // 如果雲端data.json已包含該股票，自動替換
-  try{
-    let resp=await fetch('data.json'); let j=await resp.json();
-    let found=j.results.find(r=>r.code.toUpperCase()===ticker.toUpperCase());
-    if(found){ 
-      // 找到雲端已有，直接渲染真實卡片
-      let r=found;
-      let pctCls=r.pct>=0?'pct-up':'pct-down'; let sign=r.pct>=0?'+':'';
-      let dots=`<span class="dots"><span class="dot ${r.yesterday}"></span><span class="arrow">→</span><span class="dot ${r.today}"></span></span>`;
-      let rsiHtml=''; if(r.rsi14!=null){ if(r.rsi14>=70) rsiHtml=`<span class='rsi-inline rsi-green'>RSI14(${r.rsi14.toFixed(0)})</span>`; else if(r.rsi14<=30) rsiHtml=`<span class='rsi-inline rsi-red'>RSI14(${r.rsi14.toFixed(0)})</span>`; }
-      let maLabel=(label,val,curr)=>{ if(!val) return `<span class='ma-item'><span class='ma-w'>${label}(--)</span></span>`; let cls=val>curr?'ma-red':'ma-green'; return `<span class='ma-item'><span class='ma-w'>${label}</span><span class='${cls}'>(${val.toFixed(0)})</span></span>`; };
-      let dRow=`<div class='ma-row'><span class='ma-w'>日k：</span>${maLabel('MA20',r.d20,r.curr)} ${maLabel('MA60',r.d60,r.curr)} ${maLabel('MA240',r.d240,r.curr)}</div>`;
-      let hRow=`<div class='ma-row'><span class='ma-w'>時k：</span>${maLabel('MA20',r.h20,r.curr)} ${maLabel('MA60',r.h60,r.curr)} ${maLabel('MA240',r.h240,r.curr)}</div>`;
-      document.getElementById(cardId).outerHTML=`
-      <div class="card ${r.today} custom" id="${cardId}" data-code="${r.code.toLowerCase()}" data-name="${r.name.toLowerCase()} ${r.code.toLowerCase()}" data-ticker="${r.code}">
-        <div class="left"><div class="top"><b>${r.code}</b> ${r.name} ${dots} ${rsiHtml} <span style="font-size:10px;cursor:pointer" onclick="removeCustom('${r.code}')">❌</span></div><div class="mid"><span class="price">$${r.curr}</span> <span class="pct ${pctCls}">${sign}${r.pct.toFixed(2)}%</span></div><div class="ma-box">${dRow}${hRow}</div></div><div class="star ${isPinned(r.code)?'pinned':''}" onclick="togglePin('${r.code}')">${isPinned(r.code)?'★':'☆'}</div>
-      </div>`;
-    }
-  }catch(e){}
+  try{ let resp=await fetch('data.json'); let j=await resp.json(); let found=j.results.find(r=>r.code.toUpperCase()===ticker.toUpperCase()); if(found){ let r=found; let pctCls=r.pct>=0?'pct-up':'pct-down'; let sign=r.pct>=0?'+':''; let dots=`<span class="dots"><span class="dot ${r.yesterday}"></span><span class="arrow">→</span><span class="dot ${r.today}"></span></span>`; let rsiHtml=''; if(r.rsi14!=null){ if(r.rsi14>=70) rsiHtml=`<span class='rsi-inline rsi-green'>RSI14(${r.rsi14.toFixed(0)})</span>`; else if(r.rsi14<=30) rsiHtml=`<span class='rsi-inline rsi-red'>RSI14(${r.rsi14.toFixed(0)})</span>`; } let maLabel=(label,val,curr)=>{ if(!val) return `<span class='ma-item'><span class='ma-w'>${label}(--)</span></span>`; let cls=val>curr?'ma-red':'ma-green'; return `<span class='ma-item'><span class='ma-w'>${label}</span><span class='${cls}'>(${val.toFixed(0)})</span></span>`; }; let dRow=`<div class='ma-row'><span class='ma-w'>日k：</span>${maLabel('MA20',r.d20,r.curr)} ${maLabel('MA60',r.d60,r.curr)} ${maLabel('MA240',r.d240,r.curr)}</div>`; let hRow=`<div class='ma-row'><span class='ma-w'>時k：</span>${maLabel('MA20',r.h20,r.curr)} ${maLabel('MA60',r.h60,r.curr)} ${maLabel('MA240',r.h240,r.curr)}</div>`; document.getElementById(cardId).outerHTML=`<div class="card ${r.today} custom" id="${cardId}" data-code="${r.code.toLowerCase()}" data-name="${r.name.toLowerCase()} ${r.code.toLowerCase()}" data-ticker="${r.code}"><div class="left"><div class="top"><b>${r.code}</b> ${r.name} ${dots} ${rsiHtml} <span style="font-size:10px;cursor:pointer" onclick="removeCustom('${r.code}')">❌</span></div><div class="mid"><span class="price">$${r.curr}</span> <span class="pct ${pctCls}">${sign}${r.pct.toFixed(2)}%</span></div><div class="ma-box">${dRow}${hRow}</div></div><div class="star ${isPinned(r.code)?'pinned':''}" onclick="togglePin('${r.code}')">${isPinned(r.code)?'★':'☆'}</div></div>`; } }catch(e){}
 }
 
-function removeCustom(ticker){ customStocks=customStocks.filter(s=>s.code!==ticker.toUpperCase()); pinnedStocks=pinnedStocks.filter(s=>s!==ticker.toUpperCase()); localStorage.setItem('pinnedV14',JSON.stringify(pinnedStocks)); saveCustom(); let el=document.getElementById('custom-'+ticker.replace(/\./g,'-')); if(el) el.remove(); renderPins(); }
+function removeCustom(ticker){ customStocks=customStocks.filter(s=>s.code!==ticker.toUpperCase()); pinnedStocks=pinnedStocks.filter(s=>s!==ticker.toUpperCase()); localStorage.setItem('pinnedV15',JSON.stringify(pinnedStocks)); saveCustom(); let el=document.getElementById('custom-'+ticker.replace(/\./g,'-')); if(el) el.remove(); renderPins(); }
 
 document.getElementById('addInput').addEventListener('keydown', e=>{ if(e.key==='Enter') addStock(); });
 
-// 載入已保存
 (function(){ 
   saveCustom(); 
   customStocks.forEach(s=>{
     let cardId='custom-'+s.code.replace(/\./g,'-');
-    customGrid.insertAdjacentHTML('beforeend', `
-    <div class="card 白 custom" id="${cardId}" data-code="${s.code.toLowerCase()}" data-name="${s.name.toLowerCase()} ${s.code.toLowerCase()}" data-ticker="${s.code}">
-      <div class="left"><div class="top"><b>${s.code}</b> ${s.name} <span class="dots"><span class="dot 白"></span><span class="arrow">→</span><span class="dot 白"></span></span> <span style="font-size:10px;cursor:pointer" onclick="removeCustom('${s.code}')">❌</span></div><div class="mid"><span class="price">已加入自加清單</span> <span class="pct">等待雲端</span></div><div class="ma-box"><div class="ma-row"><span class="ma-w">刷新後等待雲端更新(5分)自動算MA，點匯出發我加永久版</span></div></div></div><div class="star" onclick="togglePin('${s.code}')">☆</div></div>`);
+    customGrid.insertAdjacentHTML('beforeend', `<div class="card 白 custom" id="${cardId}" data-code="${s.code.toLowerCase()}" data-name="${s.name.toLowerCase()} ${s.code.toLowerCase()}" data-ticker="${s.code}"><div class="left"><div class="top"><b>${s.code}</b> ${s.name} <span class="dots"><span class="dot 白"></span><span class="arrow">→</span><span class="dot 白"></span></span> <span style="font-size:10px;cursor:pointer" onclick="removeCustom('${s.code}')">❌</span></div><div class="mid"><span class="price">已加入自加清單</span> <span class="pct">等待雲端</span></div><div class="ma-box"><div class="ma-row"><span class="ma-w">刷新後等待雲端更新(5分)自動算MA，點匯出發我加永久版</span></div></div></div><div class="star" onclick="togglePin('${s.code}')">☆</div></div>`);
   });
   renderPins(); updateStars();
-  // 嘗試用雲端data.json替換自加卡片為真實數據
   fetch('data.json').then(r=>r.json()).then(j=>{
     j.results.forEach(r=>{
       let card=document.getElementById('custom-'+r.code.replace(/\./g,'-'));
       if(card){ 
-        // 已在雲端，直接替換
         let pctCls=r.pct>=0?'pct-up':'pct-down'; let sign=r.pct>=0?'+':'';
         let dots=`<span class="dots"><span class="dot ${r.yesterday}"></span><span class="arrow">→</span><span class="dot ${r.today}"></span></span>`;
         let rsiHtml=''; if(r.rsi14!=null){ if(r.rsi14>=70) rsiHtml=`<span class='rsi-inline rsi-green'>RSI14(${r.rsi14.toFixed(0)})</span>`; else if(r.rsi14<=30) rsiHtml=`<span class='rsi-inline rsi-red'>RSI14(${r.rsi14.toFixed(0)})</span>`; }
