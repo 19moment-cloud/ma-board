@@ -1,5 +1,5 @@
 {
-  "update": "2026-09-22 05:01:21 UTC",
+  "update": "2026-09-22 13:09:22 香港時間",
   "results": [
     {
       "code": "SMCI",
@@ -8,9 +8,10 @@
       "yesterday": "橙",
       "curr": 41.44,
       "pct": 6.01,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日41>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 32.86,
+      "h_ma60": 39.44,
+      "h_ma240": 38.33,
+      "rsi14": 59.616762716846715
     },
     {
       "code": "NBIS",
@@ -19,9 +20,10 @@
       "yesterday": "橙",
       "curr": 234.15,
       "pct": 4.75,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日233>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 214.9,
+      "h_ma60": 222.41,
+      "h_ma240": 219.42,
+      "rsi14": 55.37009463578453
     },
     {
       "code": "MU",
@@ -30,9 +32,10 @@
       "yesterday": "橙",
       "curr": 1044.26,
       "pct": 2.8,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日1044>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 73</span>"
+      "d_ma60": 945.15,
+      "h_ma60": 991.25,
+      "h_ma240": 972.82,
+      "rsi14": 61.24409971745689
     },
     {
       "code": "MUU",
@@ -41,9 +44,10 @@
       "yesterday": "橙",
       "curr": 35.63,
       "pct": 5.66,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日36>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 72</span>"
+      "d_ma60": 31.97,
+      "h_ma60": 32.23,
+      "h_ma240": 31.36,
+      "rsi14": 59.37014609999717
     },
     {
       "code": "SNDK",
@@ -52,9 +56,10 @@
       "yesterday": "橙",
       "curr": 1776.34,
       "pct": -0.86,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日1767>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 1568.61,
+      "h_ma60": 1669.65,
+      "h_ma240": 1634.8,
+      "rsi14": 59.76565867008592
     },
     {
       "code": "SOXX",
@@ -63,9 +68,10 @@
       "yesterday": "灰",
       "curr": 562.68,
       "pct": 5.55,
-      "change_dot": "<span class='dot 灰'></span>→<span class='dot 橙'></span>",
-      "detail": "日559>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 76</span>"
+      "d_ma60": 535.19,
+      "h_ma60": 528.19,
+      "h_ma240": 515.85,
+      "rsi14": 61.86832029022186
     },
     {
       "code": "SOXL",
@@ -74,9 +80,10 @@
       "yesterday": "灰",
       "curr": 144.7,
       "pct": 17.0,
-      "change_dot": "<span class='dot 灰'></span>→<span class='dot 橙'></span>",
-      "detail": "日142>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 75</span>"
+      "d_ma60": 140.58,
+      "h_ma60": 120.86,
+      "h_ma240": 114.34,
+      "rsi14": 59.27546580527644
     },
     {
       "code": "CRCL",
@@ -85,31 +92,34 @@
       "yesterday": "橙",
       "curr": 94.7,
       "pct": 3.18,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日94>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 75.49,
+      "h_ma60": 88.45,
+      "h_ma240": 92.05,
+      "rsi14": 56.21214843598551
     },
     {
       "code": "CRCG",
       "name": "Circle2X",
       "today": "橙",
-      "yesterday": "橙",
+      "yesterday": "藍",
       "curr": 15.89,
       "pct": 6.56,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日16>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 11.61,
+      "h_ma60": 13.98,
+      "h_ma240": 15.65,
+      "rsi14": 53.624699423272396
     },
     {
       "code": "UPRO",
       "name": "標普3X",
       "today": "橙",
-      "yesterday": "橙",
+      "yesterday": "藍",
       "curr": 154.25,
       "pct": 4.8,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日154>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 146.23,
+      "h_ma60": 147.81,
+      "h_ma240": 147.99,
+      "rsi14": 58.37661933417546
     },
     {
       "code": "TQQQ",
@@ -118,9 +128,10 @@
       "yesterday": "橙",
       "curr": 79.44,
       "pct": 9.36,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日79>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 80</span>"
+      "d_ma60": 71.47,
+      "h_ma60": 72.7,
+      "h_ma240": 70.92,
+      "rsi14": 64.86244649373762
     },
     {
       "code": "TSLA",
@@ -129,20 +140,22 @@
       "yesterday": "橙",
       "curr": 375.28,
       "pct": 3.02,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日375>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 359.03,
+      "h_ma60": 366.8,
+      "h_ma240": 363.34,
+      "rsi14": 58.61418930049096
     },
     {
       "code": "SPY",
       "name": "標普500",
       "today": "橙",
-      "yesterday": "橙",
+      "yesterday": "藍",
       "curr": 773.83,
       "pct": 1.59,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日774>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 70</span>"
+      "d_ma60": 755.91,
+      "h_ma60": 763.32,
+      "h_ma240": 763.7,
+      "rsi14": 59.80123528556114
     },
     {
       "code": "QQQ",
@@ -151,9 +164,10 @@
       "yesterday": "橙",
       "curr": 742.99,
       "pct": 3.09,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日741>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 81</span>"
+      "d_ma60": 711.12,
+      "h_ma60": 721.06,
+      "h_ma240": 714.46,
+      "rsi14": 65.96701621313946
     },
     {
       "code": "BABA",
@@ -162,9 +176,10 @@
       "yesterday": "灰",
       "curr": 116.37,
       "pct": 2.76,
-      "change_dot": "<span class='dot 灰'></span>→<span class='dot 橙'></span>",
-      "detail": "日116>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 70</span>"
+      "d_ma60": 115.19,
+      "h_ma60": 111.46,
+      "h_ma240": 110.9,
+      "rsi14": 52.7020443688525
     },
     {
       "code": "NVDA",
@@ -173,9 +188,10 @@
       "yesterday": "橙",
       "curr": 227.29,
       "pct": 2.26,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日227>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 211.8,
+      "h_ma60": 220.62,
+      "h_ma240": 220.99,
+      "rsi14": 58.38939270768088
     },
     {
       "code": "AMD",
@@ -184,9 +200,10 @@
       "yesterday": "橙",
       "curr": 619.98,
       "pct": 10.75,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日616>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 87</span> <span class='rsi-purple'>RSI14 73</span>"
+      "d_ma60": 504.01,
+      "h_ma60": 556.21,
+      "h_ma240": 505.17,
+      "rsi14": 72.9628792519899
     },
     {
       "code": "INTC",
@@ -195,9 +212,10 @@
       "yesterday": "橙",
       "curr": 123.85,
       "pct": 14.04,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日122>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 84</span> <span class='rsi-purple'>RSI14 71</span>"
+      "d_ma60": 101.31,
+      "h_ma60": 110.54,
+      "h_ma240": 100.45,
+      "rsi14": 70.91595089074045
     },
     {
       "code": "AAPL",
@@ -206,9 +224,10 @@
       "yesterday": "橙",
       "curr": 338.71,
       "pct": 0.77,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日339>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 76</span>"
+      "d_ma60": 317.48,
+      "h_ma60": 335.65,
+      "h_ma240": 327.57,
+      "rsi14": 66.36612825436413
     },
     {
       "code": "GOOGL",
@@ -217,9 +236,10 @@
       "yesterday": "橙",
       "curr": 356.2,
       "pct": 1.91,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日355>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 72</span>"
+      "d_ma60": 347.44,
+      "h_ma60": 350.07,
+      "h_ma240": 341.48,
+      "rsi14": 58.89695323214029
     },
     {
       "code": "GOOG",
@@ -228,42 +248,46 @@
       "yesterday": "灰",
       "curr": 352.15,
       "pct": 2.25,
-      "change_dot": "<span class='dot 灰'></span>→<span class='dot 橙'></span>",
-      "detail": "日351>MA60 時>MA240",
-      "rsi_html": "<span class='rsi-purple'>RSI6 72</span>"
+      "d_ma60": 345.18,
+      "h_ma60": 346.16,
+      "h_ma240": 338.07,
+      "rsi14": 58.61605516101783
     },
     {
       "code": "MSFT",
       "name": "微軟",
       "today": "橙",
-      "yesterday": "橙",
+      "yesterday": "藍",
       "curr": 501.49,
       "pct": 1.56,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日502>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 452.3,
+      "h_ma60": 495.52,
+      "h_ma240": 497.53,
+      "rsi14": 57.2601932143324
     },
     {
       "code": "AMZN",
       "name": "亞馬遜",
       "today": "橙",
-      "yesterday": "橙",
+      "yesterday": "藍",
       "curr": 259.15,
       "pct": 2.14,
-      "change_dot": "<span class='dot 橙'></span>→<span class='dot 橙'></span>",
-      "detail": "日258>MA60 時>MA240",
-      "rsi_html": ""
+      "d_ma60": 253.78,
+      "h_ma60": 252.65,
+      "h_ma240": 254.07,
+      "rsi14": 52.69019869273661
     },
     {
       "code": "FUTU",
       "name": "富途",
       "today": "綠",
-      "yesterday": "綠",
+      "yesterday": "藍",
       "curr": 114.61,
       "pct": 2.32,
-      "change_dot": "<span class='dot 綠'></span>→<span class='dot 綠'></span>",
-      "detail": "日114>MA60",
-      "rsi_html": ""
+      "d_ma60": 107.56,
+      "h_ma60": 112.25,
+      "h_ma240": 115.41,
+      "rsi14": 50.81380973531462
     },
     {
       "code": "DXYZ",
@@ -272,20 +296,22 @@
       "yesterday": "藍",
       "curr": 31.05,
       "pct": -0.83,
-      "change_dot": "<span class='dot 藍'></span>→<span class='dot 藍'></span>",
-      "detail": "日31<MA20",
-      "rsi_html": ""
+      "d_ma60": 28.65,
+      "h_ma60": 31.14,
+      "h_ma240": 31.89,
+      "rsi14": 47.933755820637046
     },
     {
       "code": "BEZ",
       "name": "2X Short BE",
       "today": "藍",
-      "yesterday": "藍",
+      "yesterday": "紅",
       "curr": 5.59,
       "pct": -6.05,
-      "change_dot": "<span class='dot 藍'></span>→<span class='dot 藍'></span>",
-      "detail": "日6<MA20",
-      "rsi_html": ""
+      "d_ma60": 12.29,
+      "h_ma60": 5.58,
+      "h_ma240": 7.03,
+      "rsi14": 36.22244419397297
     },
     {
       "code": "MUZ",
@@ -294,9 +320,10 @@
       "yesterday": "紅",
       "curr": 7.23,
       "pct": -5.74,
-      "change_dot": "<span class='dot 紅'></span>→<span class='dot 紅'></span>",
-      "detail": "日7<MA60",
-      "rsi_html": "<span class='rsi-purple'>RSI6 25</span>"
+      "d_ma60": 11.28,
+      "h_ma60": 8.14,
+      "h_ma240": 8.66,
+      "rsi14": 36.92205442908135
     },
     {
       "code": "CRCD",
@@ -305,9 +332,10 @@
       "yesterday": "紅",
       "curr": 1.74,
       "pct": -6.2,
-      "change_dot": "<span class='dot 紅'></span>→<span class='dot 紅'></span>",
-      "detail": "日2<MA60",
-      "rsi_html": ""
+      "d_ma60": 4.41,
+      "h_ma60": 2.05,
+      "h_ma240": 2.05,
+      "rsi14": 37.0914185252238
     },
     {
       "code": "SQQQ",
@@ -316,9 +344,10 @@
       "yesterday": "紅",
       "curr": 34.37,
       "pct": -9.24,
-      "change_dot": "<span class='dot 紅'></span>→<span class='dot 紅'></span>",
-      "detail": "日35<MA60",
-      "rsi_html": "<span class='rsi-purple'>RSI6 20</span>"
+      "d_ma60": 39.65,
+      "h_ma60": 37.89,
+      "h_ma240": 38.94,
+      "rsi14": 34.57392371946638
     },
     {
       "code": "9868.HK",
@@ -327,9 +356,10 @@
       "yesterday": "紅",
       "curr": 40.64,
       "pct": 0.35,
-      "change_dot": "<span class='dot 紅'></span>→<span class='dot 紅'></span>",
-      "detail": "日41<MA60",
-      "rsi_html": ""
+      "d_ma60": 47.16,
+      "h_ma60": 41.02,
+      "h_ma240": 43.9,
+      "rsi14": 37.89324981616255
     },
     {
       "code": "LI",
@@ -338,9 +368,10 @@
       "yesterday": "紅",
       "curr": 11.57,
       "pct": -4.71,
-      "change_dot": "<span class='dot 紅'></span>→<span class='dot 紅'></span>",
-      "detail": "日12<MA60",
-      "rsi_html": ""
+      "d_ma60": 12.37,
+      "h_ma60": 11.91,
+      "h_ma240": 12.0,
+      "rsi14": 40.180153883383625
     },
     {
       "code": "PENG",
@@ -349,42 +380,46 @@
       "yesterday": "灰",
       "curr": 56.0,
       "pct": 5.07,
-      "change_dot": "<span class='dot 灰'></span>→<span class='dot 灰'></span>",
-      "detail": "纏繞58",
-      "rsi_html": "<span class='rsi-purple'>RSI6 70</span>"
+      "d_ma60": 57.5,
+      "h_ma60": 52.44,
+      "h_ma240": 49.99,
+      "rsi14": 55.335832673641114
     },
     {
       "code": "BE",
       "name": "Bloom Energy",
       "today": "灰",
-      "yesterday": "灰",
+      "yesterday": "橙",
       "curr": 273.98,
       "pct": 3.14,
-      "change_dot": "<span class='dot 灰'></span>→<span class='dot 灰'></span>",
-      "detail": "纏繞234",
-      "rsi_html": ""
+      "d_ma60": 233.51,
+      "h_ma60": 275.51,
+      "h_ma240": 256.11,
+      "rsi14": 59.584752093129076
     },
     {
       "code": "XPEV",
       "name": "小鵬ADR",
       "today": "灰",
-      "yesterday": "灰",
+      "yesterday": "藍",
       "curr": 10.49,
       "pct": -1.22,
-      "change_dot": "<span class='dot 灰'></span>→<span class='dot 灰'></span>",
-      "detail": "纏繞12",
-      "rsi_html": ""
+      "d_ma60": 12.08,
+      "h_ma60": 10.53,
+      "h_ma240": 10.72,
+      "rsi14": 38.40358875709072
     },
     {
       "code": "NIO",
       "name": "蔚來",
       "today": "灰",
-      "yesterday": "灰",
+      "yesterday": "藍",
       "curr": 3.68,
       "pct": 0.55,
-      "change_dot": "<span class='dot 灰'></span>→<span class='dot 灰'></span>",
-      "detail": "纏繞4",
-      "rsi_html": ""
+      "d_ma60": 4.48,
+      "h_ma60": 3.64,
+      "h_ma240": 3.74,
+      "rsi14": 31.134082616456084
     }
   ]
 }

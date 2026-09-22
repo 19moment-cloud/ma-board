@@ -2,36 +2,32 @@
 <title>MA看板 私有版</title>
 <style>
 *{box-sizing:border-box}
-body{font-family:-apple-system,Helvetica,Arial;background:#0a0e14;color:#e6e6e6;padding:14px;margin:0;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial;background:#0a0e14;color:#e6e6e6;padding:14px;margin:0}
 #lock{position:fixed;inset:0;background:#0a0e14;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999}
 #lock input{padding:14px 18px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:18px;text-align:center;margin:14px;width:240px}
 #lock button{padding:12px 28px;border-radius:12px;border:none;background:#f59e0b;color:#000;font-weight:800;font-size:16px;cursor:pointer}
-h1{font-size:20px;margin:12px 0} .sub{color:#94a3b8;font-size:12px;margin-bottom:12px;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;align-items:start}
-.card{border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.4);gap:10px;min-height:88px}
+h1{font-size:19px;margin:10px 0} .sub{color:#94a3b8;font-size:11px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;align-items:start}
+.card{border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;min-height:86px;overflow:hidden}
 .橙{background:linear-gradient(135deg,#ff8a00,#ffb347);color:#000} .綠{background:linear-gradient(135deg,#00c853,#69f0ae);color:#000}
 .灰{background:#1e293b;color:#cbd5e1;border:1px solid #2a3441} .藍{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff} .紅{background:linear-gradient(135deg,#d50000,#ff5252);color:#fff}
-.badge{padding:6px 14px;border-radius:20px;font-weight:800;font-size:16px;background:rgba(0,0,0,0.18);min-width:32px;text-align:center;flex-shrink:0}
-.line1{font-size:13px;margin-top:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap} 
-.price{color:#facc15;font-weight:900;font-size:15px;background:rgba(0,0,0,0.28);padding:2px 8px;border-radius:6px} 
-.yday{opacity:0.9;font-size:11px} .small{font-size:11px;opacity:0.92;margin-top:4px;line-height:1.4} 
-.up{color:#00e676;font-weight:700} .down{color:#ff8a80;font-weight:700} 
-.rsi{margin-top:4px;display:flex;gap:6px;flex-wrap:wrap} .rsi-purple{color:#e9d5ff;background:rgba(168,85,247,0.25);border:1px solid rgba(168,85,247,0.6);padding:2px 7px;border-radius:6px;font-size:11px;font-weight:900}
-.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-left:3px;vertical-align:middle;border:1px solid rgba(0,0,0,0.2)} 
-.dot.橙{background:#ff8a00} .dot.綠{background:#00c853} .dot.灰{background:#94a3b8} .dot.藍{background:#2962ff} .dot.紅{background:#d50000}
-.change-dots{display:inline-flex;align-items:center;background:rgba(0,0,0,0.15);padding:2px 6px;border-radius:12px;margin-left:6px}
-.pill{padding:6px 12px;border-radius:20px;background:#1e293b;font-size:12px;margin:3px;display:inline-block;border:1px solid #334155}
-.rule-box{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:12px;margin:14px 0;font-size:12px;line-height:1.8}
+.badge{padding:5px 12px;border-radius:18px;font-weight:800;font-size:14px;background:rgba(0,0,0,0.18);min-width:28px;text-align:center;flex-shrink:0}
+.left{flex:1;min-width:0} .top{font-size:13px;display:flex;align-items:center;gap:6px;flex-wrap:wrap} .mid{margin-top:6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.price{color:#facc15;font-weight:900;font-size:15px;background:rgba(0,0,0,0.28);padding:2px 8px;border-radius:6px}
+.up{color:#00e676;font-weight:800;font-size:12px} .down{color:#ff6b6b;font-weight:800;font-size:12px}
+.ma{font-size:10px;opacity:0.9;margin-top:4px;word-break:break-all} 
+.dots{display:inline-flex;align-items:center;background:rgba(0,0,0,0.18);padding:2px 8px;border-radius:12px;gap:4px;margin-left:4px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,0.2)} .dot.橙{background:#ff8a00} .dot.綠{background:#00c853} .dot.藍{background:#2962ff} .dot.紅{background:#d50000} .dot.灰{background:#94a3b8}
+.arrow{font-size:10px;opacity:0.8}
+.rsi-row{margin-top:5px} .rsi{font-size:11px;font-weight:900;padding:2px 8px;border-radius:6px;background:rgba(168,85,247,0.18);color:#e9d5ff;border:1px solid transparent}
+.rsi-green{border-color:#22c55e;color:#bbf7d0;background:rgba(34,197,94,0.15)} .rsi-red{border-color:#ef4444;color:#fecaca;background:rgba(239,68,68,0.15)}
+.pill{padding:5px 10px;border-radius:18px;background:#1e293b;font-size:11px;margin:3px;display:inline-block;border:1px solid #334155}
+.rule-box{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:10px;margin:14px 0;font-size:11px;line-height:1.7}
 </style><meta http-equiv="refresh" content="300"></head><body>
-<div id="lock">
-<h2 style="margin:0 0 8px">🔒 私有看板</h2>
-<div style="color:#94a3b8;font-size:13px">請輸入密碼才能查看</div>
-<input id="pw" type="password" placeholder="請輸入密碼" />
-<button onclick="check()">進入看板</button>
-</div>
-<h1>🚀 MA(20/60/240) 私有版 <span style="font-size:11px;background:#f59e0b;color:#000;padding:4px 10px;border-radius:8px">V5 圓點+RSI</span></h1>
-<div class="sub">更新: 2026-09-22 05:01:21 UTC | 共35隻 | 密碼 88666666 | 當前價含盤前後 | 排序橙>綠>藍>紅>灰 | RSI(6,14,24) 70/30 紫字</div>
-<div style="margin-bottom:10px">
+<div id="lock"><h2 style="margin:0 0 8px">🔒 私有看板</h2><div style="color:#94a3b8;font-size:13px">請輸入密碼</div><input id="pw" type="password" placeholder="請輸入密碼"/><button onclick="check()">進入</button></div>
+<h1>🚀 MA(20/60/240) 私有版 <span style="font-size:10px;background:#f59e0b;color:#000;padding:3px 8px;border-radius:8px">V6 香港時間+圓點+RSI14</span></h1>
+<div class="sub">更新: 2026-09-22 13:09:22 香港時間 | 共35隻 | 密碼 88666666 | 當前價含盤前後 每5分 | 排序橙>綠>藍>紅>灰 | RSI14 70/30 紫字 綠框超買紅框超賣</div>
+<div style="margin-bottom:8px">
 <span class="pill">🟠橙 主升 23隻</span>
 <span class="pill">🟢綠 次強 1隻</span>
 <span class="pill">🔵藍 弱 2隻</span>
@@ -40,332 +36,332 @@ h1{font-size:20px;margin:12px 0} .sub{color:#94a3b8;font-size:12px;margin-bottom
 </div>
 <div class="grid">
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>SMCI</b> 超微電腦 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$41.44</span> <span class='up'>+6.01%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日41>MA60 時>MA240</div>
-
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>NBIS</b> Nebius Group <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$234.15</span> <span class='up'>+4.75%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日233>MA60 時>MA240</div>
-
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>SMCI</b> 超微電腦 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$41.44</span> <span class='up'>+6.01%</span></div>
+    <div class='ma'>MA60(33) 時MA60(39) MA240(38)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>MU</b> 美光科技 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$1044.26</span> <span class='up'>+2.80%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日1044>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 73</span></div>
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>MUU</b> 美光2X <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$35.63</span> <span class='up'>+5.66%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日36>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 72</span></div>
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>NBIS</b> Nebius Group <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$234.15</span> <span class='up'>+4.75%</span></div>
+    <div class='ma'>MA60(215) 時MA60(222) MA240(219)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>SNDK</b> SanDisk <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$1776.34</span> <span class='down'>-0.86%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日1767>MA60 時>MA240</div>
-
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>SOXX</b> 半導體ETF <span class="change-dots"><span class="dot 灰" title="昨灰"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$562.68</span> <span class='up'>+5.55%</span> <span class="yday" style="font-size:11px">昨<span class="dot 灰"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日559>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 76</span></div>
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>MU</b> 美光科技 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$1044.26</span> <span class='up'>+2.80%</span></div>
+    <div class='ma'>MA60(945) 時MA60(991) MA240(973)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>SOXL</b> 半導體3X <span class="change-dots"><span class="dot 灰" title="昨灰"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$144.7</span> <span class='up'>+17.00%</span> <span class="yday" style="font-size:11px">昨<span class="dot 灰"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日142>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 75</span></div>
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>CRCL</b> Circle <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$94.7</span> <span class='up'>+3.18%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日94>MA60 時>MA240</div>
-
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>MUU</b> 美光2X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$35.63</span> <span class='up'>+5.66%</span></div>
+    <div class='ma'>MA60(32) 時MA60(32) MA240(31)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>CRCG</b> Circle2X <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$15.89</span> <span class='up'>+6.56%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日16>MA60 時>MA240</div>
-
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>UPRO</b> 標普3X <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$154.25</span> <span class='up'>+4.80%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日154>MA60 時>MA240</div>
-
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>SNDK</b> SanDisk <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$1776.34</span> <span class='down'>-0.86%</span></div>
+    <div class='ma'>MA60(1569) 時MA60(1670) MA240(1635)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>TQQQ</b> 納指3X <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$79.44</span> <span class='up'>+9.36%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日79>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 80</span></div>
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>TSLA</b> 特斯拉 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$375.28</span> <span class='up'>+3.02%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日375>MA60 時>MA240</div>
-
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>SOXX</b> 半導體ETF <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$562.68</span> <span class='up'>+5.55%</span></div>
+    <div class='ma'>MA60(535) 時MA60(528) MA240(516)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>SPY</b> 標普500 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$773.83</span> <span class='up'>+1.59%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日774>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 70</span></div>
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>QQQ</b> 納指QQQ <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$742.99</span> <span class='up'>+3.09%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日741>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 81</span></div>
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>SOXL</b> 半導體3X <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$144.7</span> <span class='up'>+17.00%</span></div>
+    <div class='ma'>MA60(141) 時MA60(121) MA240(114)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>BABA</b> 阿里 <span class="change-dots"><span class="dot 灰" title="昨灰"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$116.37</span> <span class='up'>+2.76%</span> <span class="yday" style="font-size:11px">昨<span class="dot 灰"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日116>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 70</span></div>
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>NVDA</b> 輝達 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$227.29</span> <span class='up'>+2.26%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日227>MA60 時>MA240</div>
-
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>CRCL</b> Circle <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$94.7</span> <span class='up'>+3.18%</span></div>
+    <div class='ma'>MA60(75) 時MA60(88) MA240(92)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>AMD</b> 超微 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$619.98</span> <span class='up'>+10.75%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日616>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 87</span> <span class='rsi-purple'>RSI14 73</span></div>
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>INTC</b> 英特爾 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$123.85</span> <span class='up'>+14.04%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日122>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 84</span> <span class='rsi-purple'>RSI14 71</span></div>
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>CRCG</b> Circle2X <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$15.89</span> <span class='up'>+6.56%</span></div>
+    <div class='ma'>MA60(12) 時MA60(14) MA240(16)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>AAPL</b> 蘋果 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$338.71</span> <span class='up'>+0.77%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日339>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 76</span></div>
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>GOOGL</b> 谷歌-A <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$356.2</span> <span class='up'>+1.91%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日355>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 72</span></div>
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>UPRO</b> 標普3X <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$154.25</span> <span class='up'>+4.80%</span></div>
+    <div class='ma'>MA60(146) 時MA60(148) MA240(148)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>GOOG</b> 谷歌-C <span class="change-dots"><span class="dot 灰" title="昨灰"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$352.15</span> <span class='up'>+2.25%</span> <span class="yday" style="font-size:11px">昨<span class="dot 灰"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日351>MA60 時>MA240</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 72</span></div>
-</div>
-<div class="badge">橙</div>
-</div>
-<div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>MSFT</b> 微軟 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$501.49</span> <span class='up'>+1.56%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日502>MA60 時>MA240</div>
-
-</div>
-<div class="badge">橙</div>
+  <div class="left">
+    <div class="top"><b>TQQQ</b> 納指3X <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$79.44</span> <span class='up'>+9.36%</span></div>
+    <div class='ma'>MA60(71) 時MA60(73) MA240(71)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 橙">
-<div style="flex:1;min-width:0">
-<b>AMZN</b> 亞馬遜 <span class="change-dots"><span class="dot 橙" title="昨橙"></span><span style="margin:0 2px">→</span><span class="dot 橙" title="今橙"></span></span>
-<div class="line1"><span class='price'>$259.15</span> <span class='up'>+2.14%</span> <span class="yday" style="font-size:11px">昨<span class="dot 橙"></span> 今<span class="dot 橙"></span></span></div>
-<div class="small">主升 | 日258>MA60 時>MA240</div>
-
+  <div class="left">
+    <div class="top"><b>TSLA</b> 特斯拉 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$375.28</span> <span class='up'>+3.02%</span></div>
+    <div class='ma'>MA60(359) 時MA60(367) MA240(363)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
-<div class="badge">橙</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>SPY</b> 標普500 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$773.83</span> <span class='up'>+1.59%</span></div>
+    <div class='ma'>MA60(756) 時MA60(763) MA240(764)</div>
+    
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>QQQ</b> 納指QQQ <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$742.99</span> <span class='up'>+3.09%</span></div>
+    <div class='ma'>MA60(711) 時MA60(721) MA240(714)</div>
+    
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>BABA</b> 阿里 <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$116.37</span> <span class='up'>+2.76%</span></div>
+    <div class='ma'>MA60(115) 時MA60(111) MA240(111)</div>
+    
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>NVDA</b> 輝達 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$227.29</span> <span class='up'>+2.26%</span></div>
+    <div class='ma'>MA60(212) 時MA60(221) MA240(221)</div>
+    
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>AMD</b> 超微 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$619.98</span> <span class='up'>+10.75%</span></div>
+    <div class='ma'>MA60(504) 時MA60(556) MA240(505)</div>
+    <div class='rsi-row'><span class='rsi rsi-green'>RSI14 73</span></div>
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>INTC</b> 英特爾 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$123.85</span> <span class='up'>+14.04%</span></div>
+    <div class='ma'>MA60(101) 時MA60(111) MA240(100)</div>
+    <div class='rsi-row'><span class='rsi rsi-green'>RSI14 71</span></div>
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>AAPL</b> 蘋果 <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$338.71</span> <span class='up'>+0.77%</span></div>
+    <div class='ma'>MA60(317) 時MA60(336) MA240(328)</div>
+    
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>GOOGL</b> 谷歌-A <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$356.2</span> <span class='up'>+1.91%</span></div>
+    <div class='ma'>MA60(347) 時MA60(350) MA240(341)</div>
+    
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>GOOG</b> 谷歌-C <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$352.15</span> <span class='up'>+2.25%</span></div>
+    <div class='ma'>MA60(345) 時MA60(346) MA240(338)</div>
+    
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>MSFT</b> 微軟 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$501.49</span> <span class='up'>+1.56%</span></div>
+    <div class='ma'>MA60(452) 時MA60(496) MA240(498)</div>
+    
+  </div>
+  <div class="badge">橙</div>
+</div>
+<div class="card 橙">
+  <div class="left">
+    <div class="top"><b>AMZN</b> 亞馬遜 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div>
+    <div class="mid"><span class='price'>$259.15</span> <span class='up'>+2.14%</span></div>
+    <div class='ma'>MA60(254) 時MA60(253) MA240(254)</div>
+    
+  </div>
+  <div class="badge">橙</div>
 </div>
 <div class="card 綠">
-<div style="flex:1;min-width:0">
-<b>FUTU</b> 富途 <span class="change-dots"><span class="dot 綠" title="昨綠"></span><span style="margin:0 2px">→</span><span class="dot 綠" title="今綠"></span></span>
-<div class="line1"><span class='price'>$114.61</span> <span class='up'>+2.32%</span> <span class="yday" style="font-size:11px">昨<span class="dot 綠"></span> 今<span class="dot 綠"></span></span></div>
-<div class="small">次強 | 日114>MA60</div>
-
-</div>
-<div class="badge">綠</div>
-</div>
-<div class="card 藍">
-<div style="flex:1;min-width:0">
-<b>DXYZ</b> Destiny Tech100 <span class="change-dots"><span class="dot 藍" title="昨藍"></span><span style="margin:0 2px">→</span><span class="dot 藍" title="今藍"></span></span>
-<div class="line1"><span class='price'>$31.05</span> <span class='down'>-0.83%</span> <span class="yday" style="font-size:11px">昨<span class="dot 藍"></span> 今<span class="dot 藍"></span></span></div>
-<div class="small">弱 | 日31<MA20</div>
-
-</div>
-<div class="badge">藍</div>
+  <div class="left">
+    <div class="top"><b>FUTU</b> 富途 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 綠'></span></span></div>
+    <div class="mid"><span class='price'>$114.61</span> <span class='up'>+2.32%</span></div>
+    <div class='ma'>MA60(108) 時MA60(112) MA240(115)</div>
+    
+  </div>
+  <div class="badge">綠</div>
 </div>
 <div class="card 藍">
-<div style="flex:1;min-width:0">
-<b>BEZ</b> 2X Short BE <span class="change-dots"><span class="dot 藍" title="昨藍"></span><span style="margin:0 2px">→</span><span class="dot 藍" title="今藍"></span></span>
-<div class="line1"><span class='price'>$5.59</span> <span class='down'>-6.05%</span> <span class="yday" style="font-size:11px">昨<span class="dot 藍"></span> 今<span class="dot 藍"></span></span></div>
-<div class="small">弱 | 日6<MA20</div>
-
+  <div class="left">
+    <div class="top"><b>DXYZ</b> Destiny Tech100 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 藍'></span></span></div>
+    <div class="mid"><span class='price'>$31.05</span> <span class='down'>-0.83%</span></div>
+    <div class='ma'>MA60(29) 時MA60(31) MA240(32)</div>
+    
+  </div>
+  <div class="badge">藍</div>
 </div>
-<div class="badge">藍</div>
-</div>
-<div class="card 紅">
-<div style="flex:1;min-width:0">
-<b>MUZ</b> 美光Bear <span class="change-dots"><span class="dot 紅" title="昨紅"></span><span style="margin:0 2px">→</span><span class="dot 紅" title="今紅"></span></span>
-<div class="line1"><span class='price'>$7.23</span> <span class='down'>-5.74%</span> <span class="yday" style="font-size:11px">昨<span class="dot 紅"></span> 今<span class="dot 紅"></span></span></div>
-<div class="small">空頭 | 日7<MA60</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 25</span></div>
-</div>
-<div class="badge">紅</div>
-</div>
-<div class="card 紅">
-<div style="flex:1;min-width:0">
-<b>CRCD</b> Circle反2X <span class="change-dots"><span class="dot 紅" title="昨紅"></span><span style="margin:0 2px">→</span><span class="dot 紅" title="今紅"></span></span>
-<div class="line1"><span class='price'>$1.74</span> <span class='down'>-6.20%</span> <span class="yday" style="font-size:11px">昨<span class="dot 紅"></span> 今<span class="dot 紅"></span></span></div>
-<div class="small">空頭 | 日2<MA60</div>
-
-</div>
-<div class="badge">紅</div>
+<div class="card 藍">
+  <div class="left">
+    <div class="top"><b>BEZ</b> 2X Short BE <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 藍'></span></span></div>
+    <div class="mid"><span class='price'>$5.59</span> <span class='down'>-6.05%</span></div>
+    <div class='ma'>MA60(12) 時MA60(6) MA240(7)</div>
+    
+  </div>
+  <div class="badge">藍</div>
 </div>
 <div class="card 紅">
-<div style="flex:1;min-width:0">
-<b>SQQQ</b> 納指3X空 <span class="change-dots"><span class="dot 紅" title="昨紅"></span><span style="margin:0 2px">→</span><span class="dot 紅" title="今紅"></span></span>
-<div class="line1"><span class='price'>$34.37</span> <span class='down'>-9.24%</span> <span class="yday" style="font-size:11px">昨<span class="dot 紅"></span> 今<span class="dot 紅"></span></span></div>
-<div class="small">空頭 | 日35<MA60</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 20</span></div>
-</div>
-<div class="badge">紅</div>
-</div>
-<div class="card 紅">
-<div style="flex:1;min-width:0">
-<b>9868.HK</b> 小鵬-W <span class="change-dots"><span class="dot 紅" title="昨紅"></span><span style="margin:0 2px">→</span><span class="dot 紅" title="今紅"></span></span>
-<div class="line1"><span class='price'>$40.64</span> <span class='up'>+0.35%</span> <span class="yday" style="font-size:11px">昨<span class="dot 紅"></span> 今<span class="dot 紅"></span></span></div>
-<div class="small">空頭 | 日41<MA60</div>
-
-</div>
-<div class="badge">紅</div>
+  <div class="left">
+    <div class="top"><b>MUZ</b> 美光Bear <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span></div>
+    <div class="mid"><span class='price'>$7.23</span> <span class='down'>-5.74%</span></div>
+    <div class='ma'>MA60(11) 時MA60(8) MA240(9)</div>
+    
+  </div>
+  <div class="badge">紅</div>
 </div>
 <div class="card 紅">
-<div style="flex:1;min-width:0">
-<b>LI</b> 理想 <span class="change-dots"><span class="dot 紅" title="昨紅"></span><span style="margin:0 2px">→</span><span class="dot 紅" title="今紅"></span></span>
-<div class="line1"><span class='price'>$11.57</span> <span class='down'>-4.71%</span> <span class="yday" style="font-size:11px">昨<span class="dot 紅"></span> 今<span class="dot 紅"></span></span></div>
-<div class="small">空頭 | 日12<MA60</div>
-
+  <div class="left">
+    <div class="top"><b>CRCD</b> Circle反2X <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span></div>
+    <div class="mid"><span class='price'>$1.74</span> <span class='down'>-6.20%</span></div>
+    <div class='ma'>MA60(4) 時MA60(2) MA240(2)</div>
+    
+  </div>
+  <div class="badge">紅</div>
 </div>
-<div class="badge">紅</div>
+<div class="card 紅">
+  <div class="left">
+    <div class="top"><b>SQQQ</b> 納指3X空 <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span></div>
+    <div class="mid"><span class='price'>$34.37</span> <span class='down'>-9.24%</span></div>
+    <div class='ma'>MA60(40) 時MA60(38) MA240(39)</div>
+    
+  </div>
+  <div class="badge">紅</div>
+</div>
+<div class="card 紅">
+  <div class="left">
+    <div class="top"><b>9868.HK</b> 小鵬-W <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span></div>
+    <div class="mid"><span class='price'>$40.64</span> <span class='up'>+0.35%</span></div>
+    <div class='ma'>MA60(47) 時MA60(41) MA240(44)</div>
+    
+  </div>
+  <div class="badge">紅</div>
+</div>
+<div class="card 紅">
+  <div class="left">
+    <div class="top"><b>LI</b> 理想 <span class='dots'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span></div>
+    <div class="mid"><span class='price'>$11.57</span> <span class='down'>-4.71%</span></div>
+    <div class='ma'>MA60(12) 時MA60(12) MA240(12)</div>
+    
+  </div>
+  <div class="badge">紅</div>
 </div>
 <div class="card 灰">
-<div style="flex:1;min-width:0">
-<b>PENG</b> Penguin <span class="change-dots"><span class="dot 灰" title="昨灰"></span><span style="margin:0 2px">→</span><span class="dot 灰" title="今灰"></span></span>
-<div class="line1"><span class='price'>$56.0</span> <span class='up'>+5.07%</span> <span class="yday" style="font-size:11px">昨<span class="dot 灰"></span> 今<span class="dot 灰"></span></span></div>
-<div class="small">震盪 | 纏繞58</div>
-<div class='rsi'><span class='rsi-purple'>RSI6 70</span></div>
-</div>
-<div class="badge">灰</div>
-</div>
-<div class="card 灰">
-<div style="flex:1;min-width:0">
-<b>BE</b> Bloom Energy <span class="change-dots"><span class="dot 灰" title="昨灰"></span><span style="margin:0 2px">→</span><span class="dot 灰" title="今灰"></span></span>
-<div class="line1"><span class='price'>$273.98</span> <span class='up'>+3.14%</span> <span class="yday" style="font-size:11px">昨<span class="dot 灰"></span> 今<span class="dot 灰"></span></span></div>
-<div class="small">震盪 | 纏繞234</div>
-
-</div>
-<div class="badge">灰</div>
+  <div class="left">
+    <div class="top"><b>PENG</b> Penguin <span class='dots'><span class='dot 灰'></span><span class='arrow'>→</span><span class='dot 灰'></span></span></div>
+    <div class="mid"><span class='price'>$56.0</span> <span class='up'>+5.07%</span></div>
+    <div class='ma'>MA60(58) 時MA60(52) MA240(50)</div>
+    
+  </div>
+  <div class="badge">灰</div>
 </div>
 <div class="card 灰">
-<div style="flex:1;min-width:0">
-<b>XPEV</b> 小鵬ADR <span class="change-dots"><span class="dot 灰" title="昨灰"></span><span style="margin:0 2px">→</span><span class="dot 灰" title="今灰"></span></span>
-<div class="line1"><span class='price'>$10.49</span> <span class='down'>-1.22%</span> <span class="yday" style="font-size:11px">昨<span class="dot 灰"></span> 今<span class="dot 灰"></span></span></div>
-<div class="small">震盪 | 纏繞12</div>
-
-</div>
-<div class="badge">灰</div>
+  <div class="left">
+    <div class="top"><b>BE</b> Bloom Energy <span class='dots'><span class='dot 橙'></span><span class='arrow'>→</span><span class='dot 灰'></span></span></div>
+    <div class="mid"><span class='price'>$273.98</span> <span class='up'>+3.14%</span></div>
+    <div class='ma'>MA60(234) 時MA60(276) MA240(256)</div>
+    
+  </div>
+  <div class="badge">灰</div>
 </div>
 <div class="card 灰">
-<div style="flex:1;min-width:0">
-<b>NIO</b> 蔚來 <span class="change-dots"><span class="dot 灰" title="昨灰"></span><span style="margin:0 2px">→</span><span class="dot 灰" title="今灰"></span></span>
-<div class="line1"><span class='price'>$3.68</span> <span class='up'>+0.55%</span> <span class="yday" style="font-size:11px">昨<span class="dot 灰"></span> 今<span class="dot 灰"></span></span></div>
-<div class="small">震盪 | 纏繞4</div>
-
+  <div class="left">
+    <div class="top"><b>XPEV</b> 小鵬ADR <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 灰'></span></span></div>
+    <div class="mid"><span class='price'>$10.49</span> <span class='down'>-1.22%</span></div>
+    <div class='ma'>MA60(12) 時MA60(11) MA240(11)</div>
+    
+  </div>
+  <div class="badge">灰</div>
 </div>
-<div class="badge">灰</div>
+<div class="card 灰">
+  <div class="left">
+    <div class="top"><b>NIO</b> 蔚來 <span class='dots'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 灰'></span></span></div>
+    <div class="mid"><span class='price'>$3.68</span> <span class='up'>+0.55%</span></div>
+    <div class='ma'>MA60(4) 時MA60(4) MA240(4)</div>
+    
+  </div>
+  <div class="badge">灰</div>
 </div></div>
 <div class="rule-box">
-<b>📏 V5 升級（按你圖確認）：</b><br>
-<b>RSI：</b> 正是你圖中的 <b>RSI 相對強弱指數 長度6/14/24 Upper70 Lower30 來源收盤</b>，已按此計算日線RSI<br>
-只有 <b>>70超買 或 <30超賣</b> 才會用 <span class="rsi-purple">RSI14 78</span> 紫字顯示，30-70正常不顯示<br>
-<b>昨今：</b> 已改成小圓點 <span class="dot 橙"></span>→<span class="dot 綠"></span> 取代 昨:橙 今:橙 文字，一眼看變化<br>
-<b>當前價：</b> 黃字 $ 是小時線最新價（含盤前盤後），每5分鐘動<br>
-<b>排序：</b> 橙>綠>藍>紅>灰
+<b>V6 按你要求改：</b><br>
+1. 時間改香港時間<br>
+2. 昨今文字已移除，只留 <span class="dot 橙"></span>→<span class="dot 綠"></span> 圓點箭頭圓點<br>
+3. MA直接顯示價位：MA60(價) 時MA60(價) MA240(價)<br>
+4. RSI只留RSI14，>70綠框超買，<30紅框超賣，紫字透明底，30-70不顯示<br>
+5. 排版已重寫，不會再疊
 </div>
 <script>
-const REAL_PW = "88666666";
-function check(){ const v=document.getElementById('pw').value; if(v===REAL_PW){ document.getElementById('lock').style.display='none'; sessionStorage.setItem('ma_pw','ok'); } else { alert('密碼錯誤'); } }
-if(sessionStorage.getItem('ma_pw')==='ok') document.getElementById('lock').style.display='none';
-document.getElementById('pw').addEventListener('keydown',e=>{ if(e.key==='Enter') check(); });
+const REAL_PW="88666666";
+function check(){const v=document.getElementById('pw').value;if(v===REAL_PW){document.getElementById('lock').style.display='none';sessionStorage.setItem('ma_pw','ok');}else{alert('密碼錯誤');}}
+if(sessionStorage.getItem('ma_pw')==='ok')document.getElementById('lock').style.display='none';
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')check();});
 </script>
 </body></html>
