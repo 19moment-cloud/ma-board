@@ -32,7 +32,8 @@
 .card{border-radius:14px;padding:11px 13px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;min-height:175px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.1s} .card:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.3)}
 .card.hide{display:none} .sortable-ghost{opacity:0.3} .sortable-chosen{border:2px solid #f59e0b !important}
 .card.pinned-clone{border:none;box-shadow:none}
-.橙{background:linear-gradient(135deg,#ff8a00,#ffb347);color:#000} .綠{background:linear-gradient(135deg,#00c853,#69f0ae);color:#000} .灰{background:#1e293b;color:#cbd5e1;border:1px solid #2a3441} .藍{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff} .藍紅{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff;border:6px solid #ef4444 !important} .紅{background:linear-gradient(135deg,#d50000,#ff5252);color:#fff} .白{background:#fff;color:#000;border:3px dashed #facc15}
+.橙{background:linear-gradient(135deg,#ff8a00,#ffb347);color:#000} .綠{background:linear-gradient(135deg,#00c853,#69f0ae);color:#000} .灰{background:#1e293b;color:#cbd5e1;border:1px solid #2a3441} .藍{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff} .card.藍紅{box-sizing:border-box}
+.藍紅{background:linear-gradient(135deg,#2962ff,#82b1ff);color:#fff;border:6px solid #ef4444 !important;box-sizing:border-box} .紅{background:linear-gradient(135deg,#d50000,#ff5252);color:#fff} .白{background:#fff;color:#000;border:3px dashed #facc15}
 .star{font-size:20px;cursor:pointer;user-select:none;line-height:1;padding:4px 6px;border-radius:6px;flex-shrink:0;background:rgba(0,0,0,0.12);width:28px;height:28px;display:flex;align-items:center;justify-content:center} .star:hover{background:rgba(0,0,0,0.25)} .star.pinned{color:#f59e0b} .白 .star{background:rgba(0,0,0,0.06)}
 .left{flex:1;min-width:0} 
 .top{font-size:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;width:100%} .top b{max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;flex-shrink:1} 
@@ -41,7 +42,8 @@
 .mid{margin-top:6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .price{color:#facc15;font-weight:900;font-size:15px;background:rgba(0,0,0,0.32);padding:2px 8px;border-radius:6px} .白 .price{background:#000;color:#fff}
 .pct{font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,0.45);color:#fff} .pct-up{color:#4ade80} .pct-down{color:#f87171}
-.dots{display:inline-flex;align-items:center;background:#000;padding:4px 10px;border-radius:12px;gap:4px;cursor:pointer;user-select:none;border:1px solid #111;flex-shrink:0} .dots.white{background:#fff !important;border-color:#ddd} .dots .arrow{font-size:10px;color:#fff} .dots.white .arrow{color:#000} .dot{width:9px;height:9px;border-radius:50%;display:inline-block} .dot.橙{background:#ff8a00} .dot.綠{background:#00c853} .dot.藍{background:#2962ff} .dot.藍紅{background:#2962ff;border:3px solid #ef4444;box-shadow:0 0 0 1px #ef4444;width:11px;height:11px} .dot.紅{background:#d50000} .dot.灰{background:#94a3b8} .dot.白{background:#fff;border:1px solid #000}
+.dots{display:inline-flex;align-items:center;background:#000;padding:4px 10px;border-radius:12px;gap:4px;cursor:pointer;user-select:none;border:1px solid #111;flex-shrink:0} .dots.white{background:#fff !important;border-color:#ddd} .dots .arrow{font-size:10px;color:#fff} .dots.white .arrow{color:#000} .dot{width:9px;height:9px;border-radius:50%;display:inline-block;vertical-align:middle} .dot.橙{background:#ff8a00} .dot.綠{background:#00c853} .dot.藍{background:#2962ff} .dot.card.藍紅{box-sizing:border-box}
+.藍紅{background:#2962ff;border:2.05px solid #ef4444;box-sizing:border-box;width:14px;height:14px} .dot.紅{background:#d50000} .dot.灰{background:#94a3b8} .dot.白{background:#fff;border:1px solid #000}
 .rsi-inline{font-size:11px;font-weight:800;padding:3px 7px;border-radius:6px;background:rgba(0,0,0,0.35);margin-left:2px} .rsi-inline.rsi-green{color:#4ade80;border:1px solid #22c55e} .rsi-inline.rsi-red{color:#f87171;border:1px solid #ef4444}
 .ma-box{margin-top:6px;background:#000;border-radius:8px;padding:7px 9px;border:1px solid #111;cursor:pointer;overflow:hidden} .ma-box.white{background:#fff;border-color:#ddd} 
 .ma-row{font-size:11px;line-height:1.7;display:flex;flex-wrap:nowrap;gap:6px;white-space:nowrap;overflow:hidden} 
@@ -83,7 +85,8 @@
 #rocketTopBtn:hover, .rocket-btn:hover{background:#ffffff !important; color:#000}
 
 .info-box .dot{width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;}
-.info-box .dot.藍紅{width:14px;height:14px;border:6px solid #ef4444 !important;box-sizing:border-box;}
+.info-box .dot.橙,.info-box .dot.綠,.info-box .dot.藍,.info-box .dot.紅,.info-box .dot.灰,.info-box .dot.白{width:14px;height:14px;}
+.info-box .dot.藍紅{width:14px;height:14px;background:#2962ff;border:2.05px solid #ef4444;box-sizing:border-box;}
 </style></head><body>
 
 <div id="lock">
@@ -106,7 +109,7 @@
 
 <div class="addRow" id="addRow" style="width:100%;max-width:1200px;box-sizing:border-box;display:flex;gap:10px;align-items:center"><input id="addInput" type="text" placeholder="加股：輸入自動出現選單" autocomplete="off"/><div id="yahooSuggest"></div><button class="addbtn" id="addBtn">+ 加股</button><button class="addbtn" id="clearBtn" style="background:#1e293b;color:#fff;border:1px solid #334155">清空自加</button></div>
 
-<div class="sub" id="subRow" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;width:100%;max-width:1200px;box-sizing:border-box;margin-top:10px"><span id="subText">更新: 2026-10-04 23:37:31 香港時間 | 共<span id="count" style="display:inline">59</span>隻 自加<span id="customCount" style="display:inline">0</span>隻 限流<span id="limitCount" style="display:inline">0</span>隻 置頂<span id="pinCount" style="display:inline">0</span>隻 |</span>
+<div class="sub" id="subRow" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;width:100%;max-width:1200px;box-sizing:border-box;margin-top:10px"><span id="subText">更新: 2026-10-04 23:54:18 香港時間 | 共<span id="count" style="display:inline">59</span>隻 自加<span id="customCount" style="display:inline">0</span>隻 限流<span id="limitCount" style="display:inline">0</span>隻 置頂<span id="pinCount" style="display:inline">0</span>隻 |</span>
 <button id="filterUpBtn" style="padding:4px 12px;border-radius:8px;font-size:12px;font-weight:900;border:none;cursor:pointer;background:#16a34a;color:#fff">漲0隻</button>
 <button id="filterDownBtn" style="padding:4px 12px;border-radius:8px;font-size:12px;font-weight:900;border:none;cursor:pointer;background:#dc2626;color:#fff">跌0隻</button>
 <button id="filterAllBtn" style="padding:4px 12px;border-radius:8px;font-size:12px;font-weight:900;border:none;cursor:pointer;background:linear-gradient(135deg,#c084fc,#f472b6);color:#fff">全部</button>
@@ -286,17 +289,17 @@
 <div class="card 橙" data-code="btc-usd" data-name="(btc-usd)比特幣 btc-usd" data-ticker="BTC-USD" data-yahoo="https://hk.finance.yahoo.com/quote/BTC-USD/">
   <div class="left">
     <div class="top"><b title="(BTC-USD)比特幣">(BTC-USD)比特幣</b><div class="top-right"><div class="dots-wrap"><span class='dots' data-ticker='BTC-USD'><span class='dot 藍'></span><span class='arrow'>→</span><span class='dot 藍紅'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div><div class="star" data-pin='BTC-USD'>☆</div></div></div>
-    <div class="mid"><span class='price'>$85279.59</span> <span class='pct pct-up'>+0.63%</span> <span class='rsi-inline '>RSI (65)</span><span class='rsi-inline '>CCI (75)</span></div>
-    <div class="ma-box" data-ticker='BTC-USD'><div class="ma-inner"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(82798)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(76489)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(71043)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(84987)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(85081)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(84251)</span></span></div></div></div>
-    <div class='skdj-box' data-k='[47.14, 58.88, 67.19, 74.93, 74.89, 69.11, 59.8, 49.41, 37.82, 27.15, 20.2, 24.79, 36.06, 47.24, 60.6, 73.09, 85.53, 88.95, 91.76, 90.98, 89.36, 89.52, 87.16, 82.65, 72.9, 67.15, 56.0, 43.72, 45.68, 44.7, 48.66, 51.51, 56.07, 58.7, 50.36, 41.75, 34.61, 26.74, 21.37, 22.94, 19.39, 22.63, 24.85, 36.9, 49.36, 56.56, 70.18, 81.12, 88.8, 85.9, 82.66, 80.07, 74.43, 67.17, 61.57, 52.42, 48.71, 43.49, 41.47, 43.53]' data-d='[33.17, 39.19, 45.71, 53.28, 60.16, 65.36, 67.47, 65.89, 60.99, 53.03, 43.92, 36.53, 32.57, 32.21, 36.01, 43.66, 54.55, 65.24, 74.53, 81.82, 86.61, 89.35, 89.62, 88.57, 85.43, 81.46, 75.9, 68.27, 61.35, 55.03, 50.98, 48.38, 48.39, 50.89, 51.67, 51.18, 48.83, 44.71, 38.92, 32.96, 27.8, 24.61, 22.99, 24.68, 29.34, 34.95, 43.41, 53.16, 63.82, 71.99, 77.54, 81.45, 82.16, 79.84, 75.3, 69.72, 64.06, 57.96, 52.47, 48.53]' title='SKDJ 9 6 滾輪放大'><canvas class='skdj-canvas' width='340' height='56'></canvas></div>
+    <div class="mid"><span class='price'>$85335.06</span> <span class='pct pct-up'>+0.70%</span> <span class='rsi-inline '>RSI (65)</span><span class='rsi-inline '>CCI (77)</span></div>
+    <div class="ma-box" data-ticker='BTC-USD'><div class="ma-inner"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(82800)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(76490)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(71043)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(84990)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(85082)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(84251)</span></span></div></div></div>
+    <div class='skdj-box' data-k='[47.14, 58.88, 67.19, 74.93, 74.89, 69.11, 59.8, 49.41, 37.82, 27.15, 20.2, 24.79, 36.06, 47.24, 60.6, 73.09, 85.53, 88.95, 91.76, 90.98, 89.36, 89.52, 87.16, 82.65, 72.9, 67.15, 56.0, 43.72, 45.68, 44.7, 48.66, 51.51, 56.07, 58.7, 50.36, 41.75, 34.61, 26.74, 21.37, 22.94, 19.39, 22.63, 24.85, 36.9, 49.36, 56.56, 70.18, 81.12, 88.8, 85.9, 82.66, 80.07, 74.43, 67.17, 61.57, 52.42, 48.71, 43.49, 41.47, 43.74]' data-d='[33.17, 39.19, 45.71, 53.28, 60.16, 65.36, 67.47, 65.89, 60.99, 53.03, 43.92, 36.53, 32.57, 32.21, 36.01, 43.66, 54.55, 65.24, 74.53, 81.82, 86.61, 89.35, 89.62, 88.57, 85.43, 81.46, 75.9, 68.27, 61.35, 55.03, 50.98, 48.38, 48.39, 50.89, 51.67, 51.18, 48.83, 44.71, 38.92, 32.96, 27.8, 24.61, 22.99, 24.68, 29.34, 34.95, 43.41, 53.16, 63.82, 71.99, 77.54, 81.45, 82.16, 79.84, 75.3, 69.72, 64.06, 57.96, 52.47, 48.57]' title='SKDJ 9 6 滾輪放大'><canvas class='skdj-canvas' width='340' height='56'></canvas></div>
   </div>
 </div>
 <div class="card 橙" data-code="eth-usd" data-name="(eth-usd)以太坊 eth-usd" data-ticker="ETH-USD" data-yahoo="https://hk.finance.yahoo.com/quote/ETH-USD/">
   <div class="left">
     <div class="top"><b title="(ETH-USD)以太坊">(ETH-USD)以太坊</b><div class="top-right"><div class="dots-wrap"><span class='dots' data-ticker='ETH-USD'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 藍紅'></span><span class='arrow'>→</span><span class='dot 橙'></span></span></div><div class="star" data-pin='ETH-USD'>☆</div></div></div>
-    <div class="mid"><span class='price'>$2697.33</span> <span class='pct pct-up'>+0.39%</span> <span class='rsi-inline '>RSI (61)</span><span class='rsi-inline '>CCI (-9)</span></div>
-    <div class="ma-box" data-ticker='ETH-USD'><div class="ma-inner"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(2646)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(2399)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(2104)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(2695)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(2695)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(2690)</span></span></div></div></div>
-    <div class='skdj-box' data-k='[42.33, 53.19, 60.18, 68.79, 70.38, 66.02, 59.88, 52.81, 44.76, 37.74, 35.36, 39.15, 47.34, 55.18, 65.31, 75.68, 85.13, 87.81, 88.98, 89.12, 89.16, 88.55, 85.57, 80.18, 69.98, 64.67, 52.15, 39.67, 41.1, 39.85, 45.92, 51.02, 59.74, 68.24, 65.82, 64.94, 62.2, 56.01, 48.72, 44.38, 36.89, 32.95, 29.6, 35.69, 46.1, 54.85, 68.19, 79.71, 87.0, 85.32, 82.14, 78.1, 70.99, 64.88, 57.24, 50.84, 47.09, 39.92, 37.7, 36.58]' data-d='[34.81, 37.56, 41.37, 47.57, 54.51, 60.15, 63.07, 63.01, 60.44, 55.26, 49.43, 44.95, 42.86, 43.26, 46.68, 53.0, 61.3, 69.41, 76.35, 82.01, 85.98, 88.13, 88.2, 86.93, 83.76, 79.68, 73.51, 65.37, 57.96, 51.24, 47.23, 44.95, 46.22, 50.98, 55.1, 59.28, 61.99, 62.82, 60.99, 57.01, 52.19, 46.86, 41.42, 38.04, 37.6, 39.34, 44.56, 52.36, 61.92, 70.19, 76.2, 80.08, 80.54, 78.07, 73.11, 67.36, 61.52, 55.16, 49.61, 44.89]' title='SKDJ 9 6 滾輪放大'><canvas class='skdj-canvas' width='340' height='56'></canvas></div>
+    <div class="mid"><span class='price'>$2699.7</span> <span class='pct pct-up'>+0.48%</span> <span class='rsi-inline '>RSI (62)</span><span class='rsi-inline '>CCI (-6)</span></div>
+    <div class="ma-box" data-ticker='ETH-USD'><div class="ma-inner"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(2647)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(2399)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(2104)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-green'>(2695)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-green'>(2695)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-green'>(2690)</span></span></div></div></div>
+    <div class='skdj-box' data-k='[42.33, 53.19, 60.18, 68.79, 70.38, 66.02, 59.88, 52.81, 44.76, 37.74, 35.36, 39.15, 47.34, 55.18, 65.31, 75.68, 85.13, 87.81, 88.98, 89.12, 89.16, 88.55, 85.57, 80.18, 69.98, 64.67, 52.15, 39.67, 41.1, 39.85, 45.92, 51.02, 59.74, 68.24, 65.82, 64.94, 62.2, 56.01, 48.72, 44.38, 36.89, 32.95, 29.6, 35.69, 46.1, 54.85, 68.19, 79.71, 87.0, 85.32, 82.14, 78.1, 70.99, 64.88, 57.24, 50.84, 47.09, 39.92, 37.7, 36.87]' data-d='[34.81, 37.56, 41.37, 47.57, 54.51, 60.15, 63.07, 63.01, 60.44, 55.26, 49.43, 44.95, 42.86, 43.26, 46.68, 53.0, 61.3, 69.41, 76.35, 82.01, 85.98, 88.13, 88.2, 86.93, 83.76, 79.68, 73.51, 65.37, 57.96, 51.24, 47.23, 44.95, 46.22, 50.98, 55.1, 59.28, 61.99, 62.82, 60.99, 57.01, 52.19, 46.86, 41.42, 38.04, 37.6, 39.34, 44.56, 52.36, 61.92, 70.19, 76.2, 80.08, 80.54, 78.07, 73.11, 67.36, 61.52, 55.16, 49.61, 44.94]' title='SKDJ 9 6 滾輪放大'><canvas class='skdj-canvas' width='340' height='56'></canvas></div>
   </div>
 </div>
 <div class="card 橙" data-code="spcx" data-name="(spcx)space exploration techn. spcx" data-ticker="SPCX" data-yahoo="https://hk.finance.yahoo.com/quote/SPCX/">
@@ -558,7 +561,7 @@
 <div class="card 紅" data-code="paxg-usd" data-name="(paxg-usd)pax gold usd paxg-usd" data-ticker="PAXG-USD" data-yahoo="https://hk.finance.yahoo.com/quote/PAXG-USD/">
   <div class="left">
     <div class="top"><b title="(PAXG-USD)PAX Gold USD">(PAXG-USD)PAX Gold USD</b><div class="top-right"><div class="dots-wrap"><span class='dots' data-ticker='PAXG-USD'><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span><span class='arrow'>→</span><span class='dot 紅'></span></span></div><div class="star" data-pin='PAXG-USD'>☆</div></div></div>
-    <div class="mid"><span class='price'>$4144.75</span> <span class='pct pct-down'>-0.06%</span> <span class='rsi-inline '>RSI (35)</span><span class='rsi-inline '>CCI (-87)</span></div>
+    <div class="mid"><span class='price'>$4144.78</span> <span class='pct pct-down'>-0.06%</span> <span class='rsi-inline '>RSI (35)</span><span class='rsi-inline '>CCI (-87)</span></div>
     <div class="ma-box" data-ticker='PAXG-USD'><div class="ma-inner"><div class='ma-row'><span class='ma-w'>日k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(4260)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(4372)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(4506)</span></span></div><div class='ma-row'><span class='ma-w'>時k：</span><span class='ma-item'><span class='ma-w'>MA20</span><span class='ma-red'>(4146)</span></span> <span class='ma-item'><span class='ma-w'>MA60</span><span class='ma-red'>(4154)</span></span> <span class='ma-item'><span class='ma-w'>MA240</span><span class='ma-red'>(4202)</span></span></div></div></div>
     <div class='skdj-box' data-k='[66.87, 75.28, 80.65, 88.18, 94.54, 92.26, 93.76, 91.08, 87.35, 84.04, 75.06, 75.21, 63.07, 65.11, 68.68, 72.29, 79.63, 81.62, 94.84, 94.48, 92.05, 88.42, 74.73, 59.31, 43.34, 31.06, 17.82, 9.92, 17.05, 22.88, 29.52, 36.75, 46.46, 47.01, 46.25, 41.33, 37.7, 32.06, 25.48, 23.18, 17.2, 17.71, 22.8, 29.83, 39.39, 50.36, 62.03, 72.5, 68.5, 59.23, 50.67, 41.41, 29.88, 17.81, 17.56, 18.32, 18.75, 17.22, 17.55, 19.01]' data-d='[53.69, 58.86, 64.44, 70.51, 77.39, 82.96, 87.45, 90.08, 91.19, 90.5, 87.26, 84.42, 79.3, 74.97, 71.86, 69.9, 70.67, 71.73, 77.03, 81.92, 85.82, 88.51, 87.69, 83.97, 75.39, 64.82, 52.45, 39.36, 29.75, 23.68, 21.38, 22.32, 27.1, 33.28, 38.14, 41.22, 42.58, 41.8, 38.3, 34.33, 29.49, 25.55, 23.07, 22.7, 25.02, 29.55, 37.02, 46.15, 53.77, 58.67, 60.55, 59.06, 53.7, 44.58, 36.09, 29.28, 23.95, 19.92, 17.87, 18.07]' title='SKDJ 9 6 滾輪放大'><canvas class='skdj-canvas' width='340' height='56'></canvas></div>
   </div>
@@ -594,13 +597,13 @@
 
 <div class="info-box">
 <b>技術指標60分K（MA20／60／240）實時含盤前後 延長時段：</b><br>
-<span class="dot 橙" style="width:14px;height:14px"></span>（強勢）股價時k站上MA240＋MA60＋MA20（日k季線判斷）<br>
-<span class="dot 綠" style="width:14px;height:14px"></span>（待買入）股價時k站上MA60＋MA20＋未站上MA240<br>
-<span class="dot 藍" style="width:14px;height:14px"></span>（待賣出）股價時k趺穿MA20＋未趺穿MA60＋MA240（含夜盤判斷）<br>
-<span class="dot 藍紅" style="width:14px;height:14px"></span>（賣出）股價時k趺穿MA60＋站上MA240<br>
-<span class="dot 紅" style="width:14px;height:14px"></span>（空頭）股價時k趺穿MA60＋MA240<br>
-<span class="dot 灰" style="width:14px;height:14px"></span> 不符合以上條件。<br>
-<span class="dot 白" style="width:14px;height:14px"></span> 限流 ⭐ 點星星置頂<br><br>
+<span class="dot 橙"></span>（強勢）股價時k站上MA240＋MA60＋MA20（日k季線判斷）<br>
+<span class="dot 綠"></span>（待買入）股價時k站上MA60＋MA20＋未站上MA240<br>
+<span class="dot 藍"></span>（待賣出）股價時k趺穿MA20＋未趺穿MA60＋MA240（含夜盤判斷）<br>
+<span class="dot 藍紅"></span>（賣出）股價時k趺穿MA60＋站上MA240<br>
+<span class="dot 紅"></span>（空頭）股價時k趺穿MA60＋MA240<br>
+<span class="dot 灰"></span> 不符合以上條件。<br>
+<span class="dot 白"></span> 限流 ⭐ 點星星置頂<br><br>
 <button id="exportBtn" class="export-btn" style="padding:8px 14px;border-radius:8px;border:none;font-weight:800;cursor:pointer">📋 匯出自加清單</button>
 <button id="saveAllBtn" class="export-btn" style="padding:8px 14px;border-radius:8px;border:none;font-weight:800;cursor:pointer;margin-left:8px">💾 保存卡片+排序</button>
 <button id="importAllBtn" class="export-btn" style="padding:8px 14px;border-radius:8px;border:none;font-weight:800;cursor:pointer;margin-left:8px">📥 匯入卡片+排序</button>
@@ -765,20 +768,67 @@ function updateSectionCounts(){
     });
     return c;
   }
+  
+  // V19.71 顏色篩選：點擊多選
+  window._colorFilter = window._colorFilter || new Set();
+  function applyColorFilter(){
+    var sel = window._colorFilter;
+    var grids = ['grid','grid-hk','grid-index','pinnedGrid'];
+    if(sel.size===0){
+      grids.forEach(function(gid){
+        var g=document.getElementById(gid); if(!g) return;
+        g.querySelectorAll('.card').forEach(function(c){ c.style.display=''; });
+      });
+      return;
+    }
+    grids.forEach(function(gid){
+      var g=document.getElementById(gid); if(!g) return;
+      g.querySelectorAll('.card').forEach(function(c){
+        var ok=false;
+        sel.forEach(function(col){ if(c.classList.contains(col)) ok=true; });
+        c.style.display = ok ? '' : 'none';
+      });
+    });
+  }
   function renderPills(containerId, counts, isDefault){
     var el=document.getElementById(containerId);
     if(!el) return;
     var html='';
     if(isDefault){
-      html+='<span class="count-pill orange"><span class="dot"></span>橙 主升 <b>'+counts.橙+'隻</b></span>';
-      html+='<span class="count-pill green"><span class="dot"></span>綠 次強 <b>'+counts.綠+'隻</b></span>';
-      html+='<span class="count-pill blue"><span class="dot"></span>待賣出 <b>'+counts.藍+'隻</b></span>';
-      html+='<span class="count-pill bluered"><span class="dot"></span>賣出 <b>'+counts.藍紅+'隻</b></span>';
-      html+='<span class="count-pill red"><span class="dot"></span>空頭 <b>'+counts.紅+'隻</b></span>';
-      html+='<span class="count-pill gray"><span class="dot"></span>震盪 <b>'+counts.灰+'隻</b></span>';
-      if(counts.白>0) html+='<span class="count-pill white-pill"><span class="dot"></span>限流 <b>'+counts.白+'隻</b></span>';
+      var sel = window._colorFilter;
+      function pillCls(colorKey, baseCls){
+        var active = sel.has(colorKey) ? ' active' : '';
+        return 'count-pill '+baseCls+active;
+      }
+      html+='<span class="'+pillCls('橙','orange')+'" data-color="橙"><span class="dot"></span>強勢 <b>'+counts.橙+'隻</b></span>';
+      html+='<span class="'+pillCls('綠','green')+'" data-color="綠"><span class="dot"></span>待買入 <b>'+counts.綠+'隻</b></span>';
+      html+='<span class="'+pillCls('藍','blue')+'" data-color="藍"><span class="dot"></span>待賣出 <b>'+counts.藍+'隻</b></span>';
+      html+='<span class="'+pillCls('藍紅','bluered')+'" data-color="藍紅"><span class="dot"></span>賣出 <b>'+counts.藍紅+'隻</b></span>';
+      html+='<span class="'+pillCls('紅','red')+'" data-color="紅"><span class="dot"></span>空頭 <b>'+counts.紅+'隻</b></span>';
+      html+='<span class="'+pillCls('灰','gray')+'" data-color="灰"><span class="dot"></span>震盪 <b>'+counts.灰+'隻</b></span>';
+      if(counts.白>0) html+='<span class="'+pillCls('白','white-pill')+'" data-color="白"><span class="dot"></span>限流 <b>'+counts.白+'隻</b></span>';
     }
     el.innerHTML=html;
+    // 綁定點擊
+    el.querySelectorAll('.count-pill[data-color]').forEach(function(pill){
+      pill.style.cursor='pointer';
+      pill.addEventListener('click', function(){
+        var col = this.getAttribute('data-color');
+        if(window._colorFilter.has(col)) window._colorFilter.delete(col);
+        else window._colorFilter.add(col);
+        // 重繪 pills 保留選中紫框
+        renderPills(containerId, counts, isDefault);
+        applyColorFilter();
+      });
+    });
+    // 紫色外框樣式
+    var styleId='colorFilterActiveStyle';
+    if(!document.getElementById(styleId)){
+      var st=document.createElement('style');
+      st.id=styleId;
+      st.innerHTML='.count-pill.active{border:2px solid #a855f7 !important; box-shadow:0 0 0 2px rgba(168,85,247,0.5) !important;}';
+      document.head.appendChild(st);
+    }
   }
   var defaultAll = countGrid(['grid','grid-hk','grid-index']);
   renderPills('defaultCounts', defaultAll, true);
